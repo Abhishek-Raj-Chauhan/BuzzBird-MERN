@@ -1,0 +1,826 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px; /* width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #000021; /* color of the scrollbar handle */
+  box-shadow: inset 0 0 6px rgba(255, 251, 0, 0.269);
+  border-radius: 40px;
+  height: 10px !important;
+}
+
+/* .navbar.navbar-expand-lg{
+    z-Index:1;
+    position:fixed;
+    width:100vw;
+} */
+.form-control::placeholder {
+  color: white;
+}
+
+#btn1 {
+  width: 50%;
+  padding: 0.3rem;
+  border-right: 2px solid #e9acff;
+}
+#btn1:hover {
+  background: linear-gradient(to right, #833ab4, #2720a1, #121120);
+}
+
+#btn2 {
+  width: 50%;
+  padding: 0.3rem;
+  border-left: 2px solid #e9acff;
+}
+#btn2:hover {
+  background: linear-gradient(to right, #833ab4, #2720a1, #121120);
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /*For mobiles*/
+  /* .background {
+      width: 100vw;
+      min-height: 100vh;
+      top: 0;
+      left: 0;
+      background: #2a004d;
+    } */
+  .background {
+    width: 100vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #2a004d;
+    overflow: hidden;
+  }
+  #editnote {
+    width: 100%;
+    border-top: 1px solid #3318a2;
+    border-left: 1px solid #3318a2;
+    padding: 3.2rem 0rem 0rem 0rem;
+    height: 100%;
+    overflow: auto;
+  }
+  #ntitem {
+    height: 36%;
+    background: transparent;
+  }
+  #ntitem:hover {
+    height: 36%;
+    background-color: #000021;
+  }
+  body {
+    background: linear-gradient(to right, #833ab4, #2720a1, #121120);
+    color: white;
+  }
+  #newnote {
+    background: transparent;
+    color: white;
+    height: 100vh;
+    width: 100%;
+  }
+  #headingaddnotemobile {
+    padding: 5.5rem 1rem 1rem 1rem;
+  }
+  #formaddnote {
+    width: 100%;
+    min-height: 75%;
+    padding: 1rem 1rem 0rem 1rem;
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  #mynotesrow {
+    margin: 5rem 1rem 4rem 1rem;
+  }
+
+  #userpro1 {
+    height: 77vh;
+    width: 91vw;
+    border: 0.41rem solid black;
+    background-color: #0000218a;
+    border-radius: 4rem;
+    color: white;
+    z-index: 2;
+  }
+  #userprofileimg {
+    height: 7rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+  }
+  #userpro2 {
+    margin-bottom: 0rem;
+  }
+  #userpro3 {
+    margin-bottom: 2rem;
+    color: white;
+  }
+  .logupimg {
+    width: 120px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+  #floaterlog1 {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #floaterlog2 {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign1 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign2 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign3 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign4 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /*For mobiles*/
+  /* .background {
+      width: 100vw;
+      min-height: 100vh;
+      top: 0;
+      left: 0;
+      background: #2a004d;
+    } */
+  .background {
+    width: 100vw;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #2a004d;
+    overflow: hidden;
+  }
+  #editnote {
+    width: 40%;
+    border-top: 1px solid #3318a2;
+    border-left: 1px solid #3318a2;
+    padding: 3.2rem 0rem 0rem 0rem;
+    height: 100%;
+    overflow: auto;
+  }
+  #ntitem {
+    height: 36%;
+    background: transparent;
+  }
+  #ntitem:hover {
+    height: 36%;
+    background-color: #000021;
+  }
+  body {
+    background: linear-gradient(to right, #833ab4, #2720a1, #121120);
+    color: white;
+  }
+  #newnote {
+    background: transparent;
+    color: white;
+    height: 100vh;
+    width: 100%;
+  }
+  #headingaddnotemobile {
+    padding: 5.5rem 1rem 1rem 1rem;
+  }
+  #formaddnote {
+    width: 100%;
+    min-height: 75%;
+    padding: 1rem 1rem 0rem 1rem;
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  #mynotesrow {
+    margin: 5rem 1rem 4rem 1rem;
+  }
+
+  #userpro1 {
+    height: 77vh;
+    width: 91vw;
+    border: 0.41rem solid black;
+    background-color: #0000218a;
+    border-radius: 4rem;
+    color: white;
+    z-index: 2;
+  }
+  #userprofileimg {
+    height: 7rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+  }
+  #userpro2 {
+    margin-bottom: 0rem;
+  }
+  #userpro3 {
+    margin-bottom: 2rem;
+    color: white;
+  }
+  .logupimg {
+    width: 120px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+  #floaterlog1 {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #floaterlog2 {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign1 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign2 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign3 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign4 {
+    background: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .background {
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background: #2a004d;
+    overflow: hidden;
+  }
+  #editnote {
+    width: 25%;
+    border-top: 1px solid #3318a2;
+    border-left: 1px solid #3318a2;
+    padding: 3.2rem 0rem 0rem 0rem;
+    height: 100%;
+    overflow: auto;
+  }
+  #ntitem {
+    height: 25%;
+    background: transparent;
+  }
+  #ntitem:hover {
+    height: 25%;
+    background-color: #000021;
+  }
+  #mobileedit {
+    display: none;
+  }
+  body {
+    background: linear-gradient(to right, #833ab4, #2720a1, #121120);
+    color: white;
+  }
+  #newnote {
+    background-color: transparent;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+  }
+  #headingaddnotemobile {
+    padding: 7.5rem 0rem 1rem 2rem;
+  }
+  #formaddnote {
+    width: 100%;
+    min-height: 75%;
+    padding: 1rem 1rem 0rem 1rem;
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  #mynotesrow {
+    margin: 7rem 2rem 10rem 2rem;
+  }
+
+  #userpro1 {
+    height: 70vh;
+    width: 50vw;
+    border: 1rem solid black;
+    background-color: #0000218a;
+    border-radius: 8rem;
+    color: white;
+    z-index: 2;
+  }
+  #userprofileimg {
+    height: 10rem;
+    margin-bottom: 2rem;
+    border-radius: 3rem;
+  }
+  #userpro2 {
+    margin-bottom: 7rem;
+  }
+  #userpro3 {
+    margin-bottom: 4rem;
+    color: white;
+  }
+  .logupimg {
+    width: 150px;
+    margin-bottom: 1.5rem;
+  }
+  #floaterlog1 {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #floaterlog2 {
+    padding: 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #floatersign1 {
+    background: transparent;
+    border: none;
+    color: black;
+  }
+  #floatersign2 {
+    background: transparent;
+    border: none;
+    color: black;
+  }
+  #floatersign3 {
+    background: transparent;
+    border: none;
+    color: black;
+  }
+  #floatersign4 {
+    background: transparent;
+    border: none;
+    color: black;
+  }
+}
+
+.background span {
+  width: 15vmin;
+  height: 15vmin;
+  border-radius: 15vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 39;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.background span:nth-child(0) {
+  color: #00b3ff;
+  top: 21%;
+  left: 84%;
+  animation-duration: 49s;
+  animation-delay: -110s;
+  transform-origin: -15vw 4vh;
+  box-shadow: 30vmin 0 4.683106819078617vmin currentColor;
+}
+.background span:nth-child(1) {
+  color: #00ffd5;
+  top: 84%;
+  left: 30%;
+  animation-duration: 18s;
+  animation-delay: -21s;
+  transform-origin: -6vw 10vh;
+  box-shadow: 30vmin 0 3.7718422315041455vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: #00b3ff;
+  top: 46%;
+  left: 20%;
+  animation-duration: 101s;
+  animation-delay: -25s;
+  transform-origin: -20vw -1vh;
+  box-shadow: -30vmin 0 4.579259838902587vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: #1255f3;
+  top: 99%;
+  left: 70%;
+  animation-duration: 113s;
+  animation-delay: -110s;
+  transform-origin: 16vw 6vh;
+  box-shadow: 30vmin 0 4.003738172866123vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #3b00a8;
+  top: 78%;
+  left: 49%;
+  animation-duration: 94s;
+  animation-delay: -20s;
+  transform-origin: -13vw -19vh;
+  box-shadow: -30vmin 0 4.20828219575647vmin currentColor;
+}
+.background span:nth-child(5) {
+  color: #00ffd5;
+  top: 34%;
+  left: 47%;
+  animation-duration: 38s;
+  animation-delay: -69s;
+  transform-origin: -2vw -3vh;
+  box-shadow: 30vmin 0 3.852393628483541vmin currentColor;
+}
+.background span:nth-child(6) {
+  color: #1255f3;
+  top: 73%;
+  left: 29%;
+  animation-duration: 17s;
+  animation-delay: -18s;
+  transform-origin: 3vw 16vh;
+  box-shadow: -30vmin 0 4.351241321818061vmin currentColor;
+}
+.background span:nth-child(7) {
+  color: #00b3ff;
+  top: 34%;
+  left: 52%;
+  animation-duration: 96s;
+  animation-delay: -78s;
+  transform-origin: 23vw 13vh;
+  box-shadow: -30vmin 0 3.85532560185539vmin currentColor;
+}
+.background span:nth-child(8) {
+  color: #00ffd5;
+  top: 42%;
+  left: 3%;
+  animation-duration: 80s;
+  animation-delay: -38s;
+  transform-origin: -10vw 25vh;
+  box-shadow: -30vmin 0 4.30499043747586vmin currentColor;
+}
+.background span:nth-child(9) {
+  color: #00ffd5;
+  top: 4%;
+  left: 92%;
+  animation-duration: 87s;
+  animation-delay: -49s;
+  transform-origin: -9vw 25vh;
+  box-shadow: 30vmin 0 3.863986692446705vmin currentColor;
+}
+.background span:nth-child(10) {
+  color: #3b00a8;
+  top: 65%;
+  left: 13%;
+  animation-duration: 11s;
+  animation-delay: -75s;
+  transform-origin: -13vw -13vh;
+  box-shadow: -30vmin 0 4.195088202492499vmin currentColor;
+}
+.background span:nth-child(11) {
+  color: #3b00a8;
+  top: 47%;
+  left: 97%;
+  animation-duration: 45s;
+  animation-delay: -7s;
+  transform-origin: -4vw -20vh;
+  box-shadow: -30vmin 0 3.8402115599790054vmin currentColor;
+}
+.background span:nth-child(12) {
+  color: #3b00a8;
+  top: 76%;
+  left: 82%;
+  animation-duration: 90s;
+  animation-delay: -94s;
+  transform-origin: -6vw 14vh;
+  box-shadow: 30vmin 0 4.71708469661416vmin currentColor;
+}
+.background span:nth-child(13) {
+  color: #00b3ff;
+  top: 35%;
+  left: 30%;
+  animation-duration: 7s;
+  animation-delay: -89s;
+  transform-origin: 0vw -4vh;
+  box-shadow: -30vmin 0 4.02945784583776vmin currentColor;
+}
+.background span:nth-child(14) {
+  color: #1255f3;
+  top: 78%;
+  left: 35%;
+  animation-duration: 24s;
+  animation-delay: -18s;
+  transform-origin: -10vw -23vh;
+  box-shadow: 30vmin 0 4.636062820190552vmin currentColor;
+}
+.background span:nth-child(15) {
+  color: #3b00a8;
+  top: 99%;
+  left: 72%;
+  animation-duration: 82s;
+  animation-delay: -109s;
+  transform-origin: 17vw 5vh;
+  box-shadow: -30vmin 0 4.113079555983153vmin currentColor;
+}
+.background span:nth-child(16) {
+  color: #00ffd5;
+  top: 10%;
+  left: 33%;
+  animation-duration: 24s;
+  animation-delay: -6s;
+  transform-origin: -15vw 8vh;
+  box-shadow: -30vmin 0 4.657445966504544vmin currentColor;
+}
+.background span:nth-child(17) {
+  color: #00b3ff;
+  top: 5%;
+  left: 32%;
+  animation-duration: 34s;
+  animation-delay: -46s;
+  transform-origin: -3vw -13vh;
+  box-shadow: 30vmin 0 4.484666458363919vmin currentColor;
+}
+.background span:nth-child(18) {
+  color: #00b3ff;
+  top: 49%;
+  left: 68%;
+  animation-duration: 84s;
+  animation-delay: -6s;
+  transform-origin: -21vw -11vh;
+  box-shadow: 30vmin 0 4.184256212406863vmin currentColor;
+}
+.background span:nth-child(19) {
+  color: #1255f3;
+  top: 53%;
+  left: 47%;
+  animation-duration: 94s;
+  animation-delay: -32s;
+  transform-origin: 1vw 4vh;
+  box-shadow: 30vmin 0 4.065259249270874vmin currentColor;
+}
+.background span:nth-child(20) {
+  color: #3b00a8;
+  top: 22%;
+  left: 47%;
+  animation-duration: 88s;
+  animation-delay: -15s;
+  transform-origin: -14vw 2vh;
+  box-shadow: 30vmin 0 3.931636164010702vmin currentColor;
+}
+.background span:nth-child(21) {
+  color: #1255f3;
+  top: 51%;
+  left: 44%;
+  animation-duration: 9s;
+  animation-delay: -63s;
+  transform-origin: 13vw 22vh;
+  box-shadow: -30vmin 0 4.647263501190272vmin currentColor;
+}
+.background span:nth-child(22) {
+  color: #00ffd5;
+  top: 88%;
+  left: 54%;
+  animation-duration: 115s;
+  animation-delay: -85s;
+  transform-origin: 12vw -11vh;
+  box-shadow: 30vmin 0 4.4472233413856275vmin currentColor;
+}
+.background span:nth-child(23) {
+  color: #00ffd5;
+  top: 76%;
+  left: 65%;
+  animation-duration: 105s;
+  animation-delay: -33s;
+  transform-origin: -3vw 11vh;
+  box-shadow: 30vmin 0 4.741177698476205vmin currentColor;
+}
+.background span:nth-child(24) {
+  color: #00ffd5;
+  top: 19%;
+  left: 8%;
+  animation-duration: 36s;
+  animation-delay: -16s;
+  transform-origin: 22vw -4vh;
+  box-shadow: -30vmin 0 4.460364966723758vmin currentColor;
+}
+.background span:nth-child(25) {
+  color: #1255f3;
+  top: 97%;
+  left: 34%;
+  animation-duration: 74s;
+  animation-delay: -54s;
+  transform-origin: 13vw -16vh;
+  box-shadow: 30vmin 0 4.1983489531929905vmin currentColor;
+}
+.background span:nth-child(26) {
+  color: #00ffd5;
+  top: 15%;
+  left: 91%;
+  animation-duration: 112s;
+  animation-delay: -92s;
+  transform-origin: 16vw -4vh;
+  box-shadow: 30vmin 0 4.412790781211254vmin currentColor;
+}
+.background span:nth-child(27) {
+  color: #3b00a8;
+  top: 23%;
+  left: 83%;
+  animation-duration: 58s;
+  animation-delay: -107s;
+  transform-origin: 14vw -3vh;
+  box-shadow: -30vmin 0 4.279355425530465vmin currentColor;
+}
+.background span:nth-child(28) {
+  color: #00ffd5;
+  top: 43%;
+  left: 70%;
+  animation-duration: 49s;
+  animation-delay: -48s;
+  transform-origin: 18vw -19vh;
+  box-shadow: -30vmin 0 3.812313055628967vmin currentColor;
+}
+.background span:nth-child(29) {
+  color: #1255f3;
+  top: 20%;
+  left: 63%;
+  animation-duration: 50s;
+  animation-delay: -77s;
+  transform-origin: 9vw -6vh;
+  box-shadow: 30vmin 0 4.144751258489261vmin currentColor;
+}
+.background span:nth-child(30) {
+  color: #00ffd5;
+  top: 50%;
+  left: 62%;
+  animation-duration: 112s;
+  animation-delay: -57s;
+  transform-origin: 4vw -12vh;
+  box-shadow: 30vmin 0 4.406282784403974vmin currentColor;
+}
+.background span:nth-child(31) {
+  color: #1255f3;
+  top: 98%;
+  left: 11%;
+  animation-duration: 74s;
+  animation-delay: -18s;
+  transform-origin: -6vw 12vh;
+  box-shadow: 30vmin 0 4.093563400903493vmin currentColor;
+}
+.background span:nth-child(32) {
+  color: #1255f3;
+  top: 89%;
+  left: 57%;
+  animation-duration: 69s;
+  animation-delay: -101s;
+  transform-origin: 2vw 15vh;
+  box-shadow: 30vmin 0 4.145217556191084vmin currentColor;
+}
+.background span:nth-child(33) {
+  color: #1255f3;
+  top: 78%;
+  left: 53%;
+  animation-duration: 97s;
+  animation-delay: -68s;
+  transform-origin: 15vw -7vh;
+  box-shadow: -30vmin 0 4.020004135232686vmin currentColor;
+}
+.background span:nth-child(34) {
+  color: #3b00a8;
+  top: 79%;
+  left: 99%;
+  animation-duration: 53s;
+  animation-delay: -21s;
+  transform-origin: 20vw -22vh;
+  box-shadow: 30vmin 0 4.224620530140631vmin currentColor;
+}
+.background span:nth-child(35) {
+  color: #00b3ff;
+  top: 70%;
+  left: 90%;
+  animation-duration: 70s;
+  animation-delay: -107s;
+  transform-origin: 13vw -12vh;
+  box-shadow: -30vmin 0 3.925393916727092vmin currentColor;
+}
+.background span:nth-child(36) {
+  color: #3b00a8;
+  top: 14%;
+  left: 93%;
+  animation-duration: 69s;
+  animation-delay: -53s;
+  transform-origin: -10vw -19vh;
+  box-shadow: -30vmin 0 4.0516699685746005vmin currentColor;
+}
+.background span:nth-child(37) {
+  color: #1255f3;
+  top: 42%;
+  left: 91%;
+  animation-duration: 109s;
+  animation-delay: -23s;
+  transform-origin: 25vw -15vh;
+  box-shadow: 30vmin 0 4.5343229786545605vmin currentColor;
+}
+.background span:nth-child(38) {
+  color: #00ffd5;
+  top: 21%;
+  left: 44%;
+  animation-duration: 52s;
+  animation-delay: -26s;
+  transform-origin: 21vw -14vh;
+  box-shadow: -30vmin 0 4.1626293340877165vmin currentColor;
+}
+.background span:nth-child(39) {
+  color: #3b00a8;
+  top: 80%;
+  left: 5%;
+  animation-duration: 34s;
+  animation-delay: -38s;
+  transform-origin: -14vw -22vh;
+  box-shadow: -30vmin 0 4.366704181866668vmin currentColor;
+}

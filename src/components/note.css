@@ -1,0 +1,31 @@
+.card:hover {
+  background-color: #000021;
+  /*background: linear-gradient(to right, #833ab4, #2720a1, #121120);*/
+  color: white;
+}
+.card {
+  background-color: #0000218a;
+  border-bottom: #000021;
+  color: rgb(214, 214, 214);
+}
+
+#cardib {
+  background-color: #0000218a;
+  color: white;
+  border: 0px;
+}
+body {
+  color: white;
+}
+
+/* .form-control:valid{
+    background: linear-gradient(to right, #833ab4, #2720a1, #121120);
+    border: none;
+    color: white;
+  } */
+.form-control::placeholder {
+  color: white;
+}
+#description {
+  height: fit-content;
+}
