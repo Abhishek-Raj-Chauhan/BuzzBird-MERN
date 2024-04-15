@@ -26,6 +26,15 @@ function App() {
       setAlert(null);
     }, 3000);
   };
+
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("https://cozynotes-mern.onrender.com")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  },[]);
+
   const Operation = (x) => {
     if (x === "delete") {
       showAlert("Note has been Deleted", "danger");
@@ -41,6 +50,7 @@ function App() {
       <NoteState>
         <NoteImgState>
           <Router>
+          <h1>{message}</h1>
             <Navbar />
             <Switch>
               <Route exact path="/">
