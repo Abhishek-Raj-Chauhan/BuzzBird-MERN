@@ -15,6 +15,7 @@ app.use(express.json())
 app.use(cors());
 app.use('/api/auth',require('./routes/auth.js'))
 app.use('/api/notes',require('./routes/notes.js'))
+app.use('/api/chatmsg',require('./routes/chatmsg.js'))
 
 app.get("/", (req, res) => {
   res.send("Hello Abhishek!");

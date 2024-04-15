@@ -49,9 +49,8 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: #000021; /* color of the scrollbar handle */
-  box-shadow: inset 0 0 6px rgba(255, 251, 0, 0.269);
-  border-radius: 40px;
+  background-color: #000000; /* color of the scrollbar handle */
+  /* box-shadow: inset 0 0 6px rgba(255, 251, 0, 0.269); */
   height: 10px !important;
 }
 
@@ -97,6 +96,7 @@
       left: 0;
       background: #2a004d;
     } */
+   
   .background {
     width: 100vw;
     min-height: 100vh;
@@ -114,8 +114,44 @@
     height: 100%;
     overflow: auto;
   }
+  .texter{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height:10vh;
+  }
+  #chatIn{
+    width:75%;
+    height:100%;
+    background-color:black;
+    color:white;
+    padding:0rem 1rem;
+    outline: none
+  }
+  #chatBut{
+    color: rgb(255, 255, 255);
+    width:25%;
+    height:100%;
+    border:none;
+    border-radius:0;
+    background-color:#8d61ff 
+  }
+  #editchat {
+    background-color: #000021;
+    width: 100%;
+    border-top: 1px solid #3318a2;
+    border-left: 1px solid #3318a2;
+    padding-bottom: 15rem;
+    height: 100%;
+    overflow-Y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
   #ntitem {
     height: 36%;
+    background: transparent;
+  }
+  #ntitem2 {
     background: transparent;
   }
   #ntitem:hover {
@@ -222,6 +258,28 @@
       left: 0;
       background: #2a004d;
     } */
+    .texter{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height:10vh;
+    }
+    #chatIn{
+      width:80%;
+      height:100%;
+      background-color:black;
+      color:white;
+      padding:0rem 1rem;
+      outline: none
+    }
+    #chatBut{
+      color: rgb(255, 255, 255);
+      width:20%;
+      height:100%;
+      border:none;
+      border-radius:0;
+      background-color:#8d61ff 
+    }
   .background {
     width: 100vw;
     min-height: 100vh;
@@ -231,6 +289,9 @@
     background: #2a004d;
     overflow: hidden;
   }
+  .gradient-form{
+    min-height: 100vh;
+  }
   #editnote {
     width: 40%;
     border-top: 1px solid #3318a2;
@@ -239,8 +300,22 @@
     height: 100%;
     overflow: auto;
   }
+  #editchat {
+    background-color: #000021;
+    width: 100%;
+    border-top: 1px solid #3318a2;
+    border-left: 1px solid #3318a2;
+    padding-bottom: 18rem;
+    height: 100%;
+    overflow-Y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
   #ntitem {
     height: 36%;
+    background: transparent;
+  }
+  #ntitem2 {
     background: transparent;
   }
   #ntitem:hover {
@@ -340,6 +415,28 @@
 }
 
 @media only screen and (min-width: 1025px) {
+  .texter{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height:7vh;
+  }
+  #chatIn{
+    width:90%;
+    height:100%;
+    background-color:black;
+    color:white;
+    padding:0rem 1rem;
+    outline: none
+  }
+  #chatBut{
+    color: rgb(255, 255, 255);
+    width:10%;
+    height:100%;
+    border:none;
+    border-radius:0;
+    background-color:#8d61ff 
+  }
   .background {
     position: absolute;
     width: 100vw;
@@ -353,12 +450,27 @@
     width: 25%;
     border-top: 1px solid #3318a2;
     border-left: 1px solid #3318a2;
-    padding: 3.2rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
     height: 100%;
     overflow: auto;
   }
+  #editchat {
+    background-color: #000021;
+    width: 100%;
+    border-top: 1px solid #3318a2;
+    border-left: 1px solid #3318a2;
+    padding-bottom: 13rem;
+    height: 100%;
+    overflow-Y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
   #ntitem {
     height: 25%;
+    background: transparent;
+  }
+  #ntitem2 {
     background: transparent;
   }
   #ntitem:hover {

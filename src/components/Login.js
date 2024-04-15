@@ -197,7 +197,7 @@ const Login = () => {
       </div>
       <div className="background">
         <section
-          className="h-100 gradient-form"
+          className="gradient-form"
           style={{ background: "transparent", marginTop: "2rem" }}
         >
           <div className="container py-5 h-100">
@@ -336,8 +336,7 @@ const Login = () => {
                       <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                         <h2 className="mb-4">It's so good to see you again</h2>
                         <p className="mb-0 my-2">
-                          Log in now to access your notes, seamlessly create new
-                          ones, and manage your thoughts with ease.
+                        Welcome back! Log in now to access your notes and join our vibrant community chat. Connect with like-minded individuals, share ideas, and collaborate in real-time while enjoying the convenience of secure note-taking.
                         </p>
                         <p className="mb-0 my-2">
                           With our MERN stack web application, you can trust

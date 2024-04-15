@@ -5,7 +5,9 @@ const NoteState = (props) => {
   const host = "http://localhost:5000";
   // console.log(noteContext)
   const notesIni = [];
+  const chatsIni = [];
   const [notes, setnotes] = useState(notesIni);
+  const [chats, setchats] = useState(chatsIni);
   const fetchAllNotes = async () => {
     // API CALL
     const response = await fetch(`${host}/api/notes/fetchallNotes`, {
@@ -18,7 +20,34 @@ const NoteState = (props) => {
     const json = await response.json();
     setnotes(json);
   };
-
+  const fetchAllChats = async () => {
+    // API CALL
+    const response = await fetch(`${host}/api/chatmsg/fetchChats`, {
+      method: "GET",
+      credentials: "same-origin",
+      headers: {
+        "auth-token": localStorage.getItem("token"),
+      },
+    });
+    const json = await response.json();
+    setchats(json);
+  };
+  const addChat = async (msg) => {
+    // API CALL
+    // eslint-disable-next-line
+    const response = await fetch(`${host}/api/chatmsg/addChat`, {
+      method: "POST",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+      body: JSON.stringify({msg}),
+    });
+    const chat = await response.json();
+    // setnotes(notes.push(note)) //Concat returns the array whearas push updates the array
+    setchats(chats.concat(chat));
+  };
   const addNote = async (title, description, tag) => {
     // API CALL
     // eslint-disable-next-line
@@ -95,10 +124,10 @@ const NoteState = (props) => {
     // setnotes(newNotes);
   };
   //Edit a note
-
+  
   return (
     <noteContext.Provider
-      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes }}
+      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat}}
     >
       {props.children}
     </noteContext.Provider>

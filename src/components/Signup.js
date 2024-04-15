@@ -196,7 +196,7 @@ const Signup = () => {
       </div>
       <div className="background">
         <section
-          className="h-100 gradient-form"
+          className="gradient-form"
           style={{ background: "transparent", marginTop: "2rem" }}
         >
           <div className="container py-5 h-100">
@@ -390,8 +390,7 @@ const Signup = () => {
                           Welcome to <strong>CozyNotes</strong>
                         </h2>
                         <p className="mb-0 my-2">
-                          Sign up now to unlock a world of seamless note-taking
-                          capabilities and unparalleled security features.
+                        Sign up now and unlock a world of seamless note-taking capabilities, unparalleled security features, and access to our vibrant community chat.
                         </p>
                         <p className="mb-0 my-2">
                           Creating an account with us is quick, easy, and

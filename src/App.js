@@ -13,6 +13,7 @@ import NoteImgState from "./context/notes/NoteImgState";
 import UserState from "./context/user/UserState";
 import UserProfile from "./components/UserProfile";
 import AddNote from "./components/AddNote";
+import Chats from "./components/Chats";
 
 function App() {
   const [alerter, setAlert] = useState(null);
@@ -65,6 +66,9 @@ function App() {
               </Route>
               <Route exact path="/addnote">
                 <AddNote alerter={alerter} toggle={Operation} />
+              </Route>
+              <Route exact path="/chats">
+                <Chats/>
               </Route>
             </Switch>
           </Router>

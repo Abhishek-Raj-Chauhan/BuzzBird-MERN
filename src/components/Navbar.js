@@ -128,6 +128,17 @@ const Navbar = (props) => {
                     className={`nav-link ${
                       location.pathname === "/about" ? "active" : ""
                     }`}
+                    to="/chats"
+                    style={{ color: "white" }}
+                  >
+                    Community Chats
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${
+                      location.pathname === "/about" ? "active" : ""
+                    }`}
                     to="/about"
                     style={{ color: "white" }}
                   >
