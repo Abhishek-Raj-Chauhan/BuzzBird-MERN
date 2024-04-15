@@ -1,3 +1,6 @@
+Update: A vibrant community chat feature. Engage with like-minded individuals, share ideas, and collaborate in real-time right within our platform. Whether you're seeking inspiration, feedback, or simply want to connect with others, our community chat is the perfect space for meaningful interactions.
+
+
 MERN (MongoDB, Express.js, React.js, Node.js)
 stack web application, where creativity meets security.
 CozyNotes provides a seamless
