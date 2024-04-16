@@ -60,7 +60,7 @@ const Signup = () => {
   if (redirect === true) {
     setTimeout(() => {
       history.push("/home");
-    }, 600);
+    }, 1100);
   }
   if (document.getElementById("navBar"))
     document.getElementById("navBar").style.background = "transparent";
