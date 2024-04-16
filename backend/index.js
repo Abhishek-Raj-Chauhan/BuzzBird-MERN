@@ -18,9 +18,9 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use('/api/auth', require('./routes/auth.js'));
-app.use('/api/notes', require('./routes/notes.js'));
-app.use('/api/chatmsg', require('./routes/chatmsg.js'));
+app.use('https://cozynotes-mern.onrender.com/api/auth', require('./routes/auth.js'));
+app.use('https://cozynotes-mern.onrender.com/api/notes', require('./routes/notes.js'));
+app.use('https://cozynotes-mern.onrender.com/api/chatmsg', require('./routes/chatmsg.js'));
 
 app.get("/", (req, res) => {
   res.send("Hello Abhishek!");
