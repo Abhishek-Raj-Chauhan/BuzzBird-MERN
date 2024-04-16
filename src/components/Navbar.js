@@ -7,9 +7,14 @@ const Navbar = (props) => {
   const history = useHistory();
   let location = useLocation();
 
-  const handleNavCollapse = () => setIsNavCollapsed(false);
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
+  const handleLinkClick = () => {
+    // Always collapse the navbar on any link click
+    handleNavCollapse();
+  };
   const handlelogOut = (e) => {
+    handleLinkClick();
     e.preventDefault();
     if (localStorage.getItem("token")) {
       localStorage.removeItem("token");
@@ -18,9 +23,6 @@ const Navbar = (props) => {
     }
   };
 
-  const handleLinkClick = () => {
-      handleNavCollapse();
-  };
 
   return (
     <>
@@ -175,6 +177,7 @@ const Navbar = (props) => {
                         borderRadius: "0px",
                         backgroundColor: "white",
                       }}
+                      onClick={handleLinkClick}
                     >
                       Login
                     </Link>
@@ -188,6 +191,7 @@ const Navbar = (props) => {
                         borderRadius: "0px",
                         backgroundColor: "white",
                       }}
+                      onClick={handleLinkClick}
                     >
                       SignUp
                     </Link>
