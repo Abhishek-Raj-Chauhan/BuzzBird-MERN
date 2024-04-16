@@ -2,12 +2,12 @@ const ConnectToMongo = require("./db");
 const express = require("express");
 const cors = require('cors');
 const dotenv = require('dotenv');
-const host = '0.0.0.0';
+
 ConnectToMongo();
 
 const app = express();
 dotenv.config();
-const port = 10000;
+const port = process.env.PORT;
 
 // Available Routes
 app.use(express.json());
@@ -26,6 +26,6 @@ app.get("/", (req, res) => {
   res.send("Hello Abhishek!");
 });
 
-app.listen(port, host, () => {
-  console.log(`CozyNotes Backend listening at http://${host}:${port}`);
+app.listen(port, () => {
+  console.log(`CozyNotes Backend listening at http://localhost:${port}`);
 });
