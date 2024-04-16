@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import userContext from "./userContext";
 const UserState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://cozynotes-mern.onrender.com";
   // console.log(noteContext)
   const UserIni = [];
   const [userdata, setuserdata] = useState(UserIni);
