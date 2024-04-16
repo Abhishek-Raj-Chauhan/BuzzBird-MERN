@@ -46,7 +46,7 @@ const Signup = () => {
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       localStorage.setItem("token", json.authToken);
-      updateNote(ref, cref, 500);
+      updateNote(ref, cref, 1000);
       setredirect(true);
     } else {
       setredirect(false);
