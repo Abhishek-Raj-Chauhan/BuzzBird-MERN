@@ -26,6 +26,6 @@ app.get("/", (req, res) => {
   res.send("Hello Abhishek!");
 });
 
-app.listen(port, () => {
-  console.log(`CozyNotes Backend listening at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`CozyNotes Backend listening at http://'0.0.0.0':${port}`);
 });
