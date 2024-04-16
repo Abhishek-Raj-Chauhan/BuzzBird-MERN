@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import "../App.css";
 
@@ -7,7 +7,7 @@ const Navbar = (props) => {
   const history = useHistory();
   let location = useLocation();
 
-  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+  const handleNavCollapse = () => setIsNavCollapsed(false);
 
   const handlelogOut = (e) => {
     e.preventDefault();
@@ -19,16 +19,8 @@ const Navbar = (props) => {
   };
 
   const handleLinkClick = () => {
-    if (!isNavCollapsed) {
       handleNavCollapse();
-    }
   };
-  useEffect(() => {
-    // Reset navbar collapse state when navigating back to the home page
-    if (location.pathname === "/home" && !isNavCollapsed) {
-      setIsNavCollapsed(true);
-    }
-  }, [location.pathname, isNavCollapsed]);
 
   return (
     <>
