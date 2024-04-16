@@ -30,7 +30,7 @@ const Signup = () => {
   const handlesignUp = async (e) => {
     const { name, email, password } = credentials;
     e.preventDefault();
-    const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+    const response = await fetch(`https://cozynotes-mern.onrender.com/api/auth/createuser`, {
       method: "POST",
       credentials: "same-origin",
       headers: {
