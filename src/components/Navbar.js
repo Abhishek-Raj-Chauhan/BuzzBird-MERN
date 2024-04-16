@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import "../App.css";
+
 const Navbar = (props) => {
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const history = useHistory();
   let location = useLocation();
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
   const handlelogOut = (e) => {
     e.preventDefault();
     if (localStorage.getItem("token")) {
@@ -12,6 +17,13 @@ const Navbar = (props) => {
       history.push("/");
     }
   };
+
+  const handleLinkClick = () => {
+    if (!isNavCollapsed) {
+      handleNavCollapse();
+    }
+  };
+
   return (
     <>
       <div
@@ -63,8 +75,9 @@ const Navbar = (props) => {
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              aria-expanded={!isNavCollapsed ? true : false}
               aria-label="Toggle navigation"
+              onClick={handleNavCollapse}
             >
               <span
                 style={{ backgroundColor: "#ffe7eb", borderRadius: "2px" }}
@@ -76,7 +89,7 @@ const Navbar = (props) => {
                 window.innerWidth < 991
                   ? ""
                   : "d-flex flex-row justify-content-between align-items-center"
-              }`}
+              } ${isNavCollapsed ? "collapse" : ""}`}
               id="navbarSupportedContent"
             >
               <ul
@@ -97,6 +110,7 @@ const Navbar = (props) => {
                     aria-current="page"
                     to="/home"
                     style={{ color: "white" }}
+                    onClick={handleLinkClick}
                   >
                     Home
                   </Link>
@@ -108,6 +122,7 @@ const Navbar = (props) => {
                     }`}
                     to="/mynotes"
                     style={{ color: "white" }}
+                    onClick={handleLinkClick}
                   >
                     My Notes
                   </Link>
@@ -115,10 +130,11 @@ const Navbar = (props) => {
                 <li className="nav-item">
                   <Link
                     className={`nav-link ${
-                      location.pathname === "/about" ? "active" : ""
+                      location.pathname === "/profile" ? "active" : ""
                     }`}
                     to="/profile"
                     style={{ color: "white" }}
+                    onClick={handleLinkClick}
                   >
                     Profile
                   </Link>
@@ -126,10 +142,11 @@ const Navbar = (props) => {
                 <li className="nav-item">
                   <Link
                     className={`nav-link ${
-                      location.pathname === "/about" ? "active" : ""
+                      location.pathname === "/chats" ? "active" : ""
                     }`}
                     to="/chats"
                     style={{ color: "white" }}
+                    onClick={handleLinkClick}
                   >
                     Community Chats
                   </Link>
@@ -141,6 +158,7 @@ const Navbar = (props) => {
                     }`}
                     to="/about"
                     style={{ color: "white" }}
+                    onClick={handleLinkClick}
                   >
                     About
                   </Link>
