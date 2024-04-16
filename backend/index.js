@@ -17,6 +17,7 @@ const corsOptions = {
   origin: 'https://cozynotes-mern-1.onrender.com'
 };
 app.use(cors(corsOptions));
+app.use(cors());
 
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/notes', require('./routes/notes.js'));
