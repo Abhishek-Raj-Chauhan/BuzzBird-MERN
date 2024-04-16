@@ -2,12 +2,12 @@ const ConnectToMongo = require("./db");
 const express = require("express");
 const cors = require('cors');
 const dotenv = require('dotenv');
-
+const host = '0.0.0.0';
 ConnectToMongo();
 
 const app = express();
 dotenv.config();
-const port = process.env.PORT;
+const port = 10000;
 
 // Available Routes
 app.use(express.json());
@@ -26,8 +26,6 @@ app.get("/", (req, res) => {
   res.send("Hello Abhishek!");
 });
 
-const server = app.listen(port, () => {
-  server.keepAliveTimeout = 120000; // 120 seconds
-  server.headersTimeout = 120000;   // 120 seconds
-  console.log(`CozyNotes Backend listening at http://localhost:${port}`);
+app.listen(port, host, () => {
+  console.log(`CozyNotes Backend listening at http://${host}:${port}`);
 });
