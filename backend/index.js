@@ -7,7 +7,7 @@ ConnectToMongo();
 
 const app = express();
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 // Available Routes
 app.use(express.json());
