@@ -46,7 +46,7 @@ const Signup = () => {
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       localStorage.setItem("token", json.authToken);
-      updateNote(ref, cref, 1500);
+      updateNote(ref, cref, 500);
       setredirect(true);
     } else {
       setredirect(false);
@@ -60,7 +60,7 @@ const Signup = () => {
   if (redirect === true) {
     setTimeout(() => {
       history.push("/home");
-    }, 1600);
+    }, 600);
   }
   if (document.getElementById("navBar"))
     document.getElementById("navBar").style.background = "transparent";
