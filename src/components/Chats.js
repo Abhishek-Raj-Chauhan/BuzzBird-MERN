@@ -3,19 +3,18 @@ import noteContext from "../context/notes/noteContext";
 import ChatItem from "./ChatItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "../App.css";
-
 function Chats(props) {
   const context = useContext(noteContext);
-  const { chats, fetchAllChats } = context;
+  const { chats, fetchAllChats, addChat } = context;
   const [chat, setChat] = useState({ msg: "" });
   const [loading, setLoading] = useState(false);
-  const [pagination, setPagination] = useState({ limit: 10, skip: 0 });
   const chatListRef = useRef(null);
   let history = useHistory();
 
   const handleAddChat = (event) => {
     event.preventDefault();
-    // Add logic to add chat
+    addChat(chat.msg);
+    setChat({ msg: "" });
   };
 
   const handleChange = (event) => {
@@ -23,18 +22,16 @@ function Chats(props) {
   };
 
   const handleScroll = () => {
-    const { scrollTop, scrollHeight, clientHeight } = chatListRef.current;
-    if (scrollTop + clientHeight >= scrollHeight - 20) {
-      // User has scrolled to the bottom, fetch more chats
+    const { scrollTop } = chatListRef.current;
+    if (scrollTop === 0) {
+      // User has scrolled to the top, fetch more chats
       fetchMoreChats();
     }
   };
 
   const fetchMoreChats = () => {
-    // Increment skip value to fetch next page of chats
-    const newPagination = { ...pagination, skip: pagination.skip + pagination.limit };
-    setPagination(newPagination);
-    // Implement logic to fetch more chats here using newPagination
+    // Implement logic to fetch more chats here
+    // Set loading state while fetching
     setLoading(true);
     // Simulate loading for 1 second
     setTimeout(() => {
@@ -45,7 +42,6 @@ function Chats(props) {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      // Fetch initial chats
       fetchAllChats();
     } else {
       history.push("/");
@@ -55,17 +51,18 @@ function Chats(props) {
   useEffect(() => {
     // Add scroll event listener to chat list container
     chatListRef.current.addEventListener("scroll", handleScroll);
-    return () => {
-      // Remove event listener when component unmounts
-      chatListRef.current.removeEventListener("scroll", handleScroll);
-    };
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
       <h3 style={{ padding: "4rem 0rem 1rem 1rem" }}>Community Chats: </h3>
-      <div ref={chatListRef} className="list-group rounded-0" id="editchat">
-        {chats.map((chat) => (
+      <div
+        ref={chatListRef}
+        className="list-group rounded-0"
+        id="editchat"
+      >
+        {chats.slice().reverse().map((chat) => (
           <ChatItem key={chat._id} chat={chat} />
         ))}
         {loading && <div>Loading more chats...</div>}
