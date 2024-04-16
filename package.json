@@ -23,7 +23,7 @@
     "both": "concurrently \"npm run start\" \"nodemon backend/index.js\" ",
     "install-server": "cd backend && npm install",
     "start-server": "cd backend && node index.js",
-    "install-client": "cd.. && npm install",
+    "install-client": "npm install",
     "build-client": "npm run build",
     "start-client": "npm run start"
   },
