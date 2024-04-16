@@ -65,7 +65,11 @@ const Login = () => {
     }, 600);
   }
   if (document.getElementById("navBar"))
-    document.getElementById("navBar").style.background = "transparent";
+    document.getElementById("navBar").style.background = `${
+      window.innerWidth < 601
+        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
+        : "transparent"
+    }`;
   return (
     <>
       <button
