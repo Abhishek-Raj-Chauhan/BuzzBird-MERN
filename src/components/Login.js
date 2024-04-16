@@ -198,7 +198,6 @@ const Login = () => {
       <div className="background">
         <section
           className="gradient-form"
-          style={{ background: "transparent", marginTop: "2rem" }}
         >
           <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">

@@ -349,3 +349,25 @@
     border-bottom-right-radius: 0.3rem;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .gradient-form {
+    background: transparent;
+    margin-top: 2rem
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .gradient-form {
+    background: transparent;
+    margin-top: 2rem
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .gradient-form {
+    background: transparent;
+    margin-top: 4rem
+  }
+}
+
