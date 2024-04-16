@@ -4,7 +4,11 @@ import userContext from "../context/user/userContext";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const UserProfile = () => {
-  if(document.getElementById('navBar')) document.getElementById('navBar').style.background='transparent'
+  if(document.getElementById('navBar')) document.getElementById('navBar').style.background=`${
+    window.innerWidth < 601
+      ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
+      : "transparent"
+  }`;
   let history = useHistory();
   const context = useContext(userContext);
   const { userdata, fetchUserData } = context;
