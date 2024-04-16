@@ -26,6 +26,8 @@ app.get("/", (req, res) => {
   res.send("Hello Abhishek!");
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
+  server.keepAliveTimeout = 120000; // 120 seconds
+  server.headersTimeout = 120000;   // 120 seconds
   console.log(`CozyNotes Backend listening at http://localhost:${port}`);
 });
