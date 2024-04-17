@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
+import axios from "axios";
 const Signup = () => {
   const [credentials, setcredentials] = useState({
     name: "",
