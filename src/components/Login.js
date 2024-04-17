@@ -11,6 +11,8 @@ const Login = () => {
   const cref = useRef(null);
   const ref2 = useRef(null);
   const cref2 = useRef(null);
+  const ref3 = useRef(null);
+  const cref3 = useRef(null);
   const tex = useRef(null);
   const tex2 = useRef(null);
   const updateNote = (ref, cref, time) => {
@@ -31,7 +33,7 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    updateNote(ref2, cref2, 1200);
+    ref3.current.click();
   }, []);
 
   const handleSubmit = async (e) => {
@@ -210,7 +212,7 @@ const Login = () => {
         data-bs-toggle="modal"
         id="but3"
         data-bs-target="#exampleModal2"
-        ref={ref2}
+        ref={ref3}
       >
         Info
       </button>
@@ -258,10 +260,10 @@ const Login = () => {
               <button
                 type="button"
                 id="but4"
-                className="btn-close d-none"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                ref={cref2}
+                ref={cref3}
               ></button>
             </div>
           </div>
