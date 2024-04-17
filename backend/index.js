@@ -21,6 +21,7 @@ app.use(cors(corsOptions));
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/notes', require('./routes/notes.js'));
 app.use('/api/chatmsg', require('./routes/chatmsg.js'));
+app.use('/api/otp', require('./routes/otp.js'));
 
 app.get("/", (req, res) => {
   res.send("Hello Abhishek!");

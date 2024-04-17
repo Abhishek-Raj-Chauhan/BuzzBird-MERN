@@ -7,10 +7,38 @@ const Signup = () => {
     email: "",
     password: "",
     cpassword: "",
+    otp: "",
   });
   const onchange = (event) => {
     setcredentials({ ...credentials, [event.target.name]: event.target.value });
   };
+
+  const sendOTP = async () => {
+    try {
+      const response = await axios.post("/api/auth/sendOTP", {
+        email: credentials.email,
+      });
+      alert(response.data); // Alert success message
+    } catch (error) {
+      console.error("Error sending OTP:", error.response.data);
+      alert("Error sending OTP");
+    }
+  };
+
+  const verifyOTP = async () => {
+    try {
+      const response = await axios.post("/api/auth/verifyOTP", {
+        email: credentials.email,
+        otp: credentials.otp,
+      });
+      alert(response.data); // Alert success message
+      // Proceed with signup or other actions after OTP verification
+    } catch (error) {
+      console.error("Error verifying OTP:", error.response.data);
+      alert("Invalid OTP");
+    }
+  };
+
   let history = useHistory();
   const [redirect, setredirect] = useState(false);
   const ref = useRef(null);
@@ -30,14 +58,16 @@ const Signup = () => {
   const handlesignUp = async (e) => {
     const { name, email, password } = credentials;
     e.preventDefault();
-    const response = await fetch(`https://cozynotes-mern.onrender.com/api/auth/createuser`, {
-      method: "POST",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, password }),
-    });
+    const response = await fetch(`https://cozynotes-mern.onrender.com/api/auth/createuser`,
+      {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      }
+    );
 
     const json = await response.json();
     //save the auth token and redirect
@@ -199,9 +229,7 @@ const Signup = () => {
         </div>
       </div>
       <div className="background">
-        <section
-          className="gradient-form"
-        >
+        <section className="gradient-form">
           <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-xl-10">
@@ -368,7 +396,13 @@ const Signup = () => {
                               Confirm Password
                             </label>
                           </div>
-
+                          <input
+                            type="text"
+                            name="otp"
+                            value={credentials.otp}
+                            onChange={onchange}
+                            placeholder="Enter OTP"
+                          />
                           <div className="text-center pt-1 mb-5 pb-1">
                             <button
                               className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
@@ -376,6 +410,22 @@ const Signup = () => {
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                             >
                               Register
+                            </button>
+                            <button
+                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              type="submit"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }}
+                              onClick={sendOTP}
+                            >
+                              Send otp
+                            </button>
+                            <button
+                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              type="submit"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }}
+                              onClick={verifyOTP}
+                            >
+                              verify otp
                             </button>
                             {/* <a className="text-muted" href="#!">
                         Forgot password?
@@ -393,7 +443,9 @@ const Signup = () => {
                           Welcome to <strong>CozyNotes</strong>
                         </h2>
                         <p className="mb-0 my-2">
-                        Sign up now and unlock a world of seamless note-taking capabilities, unparalleled security features, and access to our vibrant community chat.
+                          Sign up now and unlock a world of seamless note-taking
+                          capabilities, unparalleled security features, and
+                          access to our vibrant community chat.
                         </p>
                         <p className="mb-0 my-2">
                           Creating an account with us is quick, easy, and
