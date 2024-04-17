@@ -29,6 +29,11 @@ const Login = () => {
       localStorage.clear();
     }
   }, []);
+  useEffect(() => {
+      if (tex.current) tex.current.textContent = "Welcome";
+      if (tex2.current) tex2.current.textContent = "As i am using a free plan to host my website after 15 min of inactivity the server spins down and might take few seconds to again be active, after that everything will be smooth, so just wait for first time";
+      updateNote(ref, cref, 1500);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
