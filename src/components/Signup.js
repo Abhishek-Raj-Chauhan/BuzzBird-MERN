@@ -20,7 +20,8 @@ const Signup = () => {
       const response = await axios.post("/api/auth/sendOTP", {
         email: credentials.email,
       });
-      alert(response.data); // Alert success message
+      console.log(response)
+      // alert(response.data); // Alert success message
     } catch (error) {
       console.error("Error sending OTP:", error.response.data);
       alert("Error sending OTP");
