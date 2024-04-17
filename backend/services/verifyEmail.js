@@ -4,12 +4,12 @@ const Otp = require("../models/otp");
 dotenv.config();
 
 const verifyEmail = expressAsyncHandler(async (req, res) => {
-  const { otpe } = req.body;
-  console.log(otpe);
+  const { otp } = req.body;
+  console.log(otp);
   try {
     // Find OTP entry in the database
     let success=false;
-    const otpEntry = await Otp.findOne({ otp: otpe });
+    const otpEntry = await Otp.findOne({ otp: otp });
     if (otpEntry) {
       // OTP is valid
       success=true;
