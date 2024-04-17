@@ -249,10 +249,11 @@ const Login = () => {
 
                 <h1 id="infohead">Important Note!</h1>
                 <p id="infopara">
-                  As i am on a free hosting plan, the server may temporarily
-                  spin down after 15 minutes of inactivity. It might take a few
+                  As I'm on a free hosting plan, the server may temporarily spin
+                  down after 15 minutes of inactivity. It might take a few
                   seconds to become active again. Please be patient for the
-                  initial load, subsequent interactions will be smooth.
+                  initial load; subsequent interactions will be smooth. If login
+                  doesn't work, please refresh the page once or twice.
                 </p>
               </div>
               <div
