@@ -161,7 +161,7 @@ const Signup = () => {
                   <i className="fa-solid fa-check" id="iyer9"></i>
                 </div>
 
-                <h1 ref={tex}>Success</h1>
+                <h3 ref={tex}>Success</h3>
                 <p ref={tex2}></p>
               </div>
               <button
