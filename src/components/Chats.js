@@ -53,12 +53,6 @@ function Chats(props) {
     chatListRef.current.addEventListener("scroll", handleScroll);
     // eslint-disable-next-line
   }, []);
-  if (document.getElementById("navBar"))
-    document.getElementById("navBar").style.background = `${
-      window.innerWidth < 991
-        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
-        : "transparent"
-    }`;
   return (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
       <h3 style={{ padding: "4rem 0rem 1rem 1rem" }}>Community Chats: </h3>
