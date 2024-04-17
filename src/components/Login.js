@@ -3,6 +3,16 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
 const Login = () => {
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      history.push("/home");
+    } else {
+      history.push("/");
+    }
+  }, [history]);
+
+
   const [credentials, setcredentials] = useState({ email: "", password: "" });
   const onchange = (event) => {
     setcredentials({ ...credentials, [event.target.name]: event.target.value });
