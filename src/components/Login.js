@@ -38,17 +38,20 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`https://cozynotes-mern.onrender.com/api/auth/login`, {
-      method: "POST",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
+    const response = await fetch(
+      `https://cozynotes-mern.onrender.com/api/auth/login`,
+      {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      }
+    );
 
     const json = await response.json();
     if (json.success) {
@@ -228,10 +231,7 @@ const Login = () => {
           className="modal-dialog d-flex justify-content-center align-items-center"
           style={{ height: "100%" }}
         >
-          <div
-            className="modal-content d-flex flex-row justify-content-center align-items-center"
-            
-          >
+          <div className="modal-content d-flex flex-row justify-content-center align-items-center">
             <div
               className="modal-header"
               style={{ height: "100%", width: "100%" }}
@@ -241,22 +241,37 @@ const Login = () => {
                 style={{ height: "89%", width: "89%", color: "black" }}
               >
                 <div
-                  className="icon d-flex justify-content-center align-items-center" id="iyer2"
+                  className="icon d-flex justify-content-center align-items-center"
+                  id="iyer2"
                 >
                   <i id="iyer" class="fa-solid fa-info"></i>
                 </div>
 
                 <h1 id="infohead">Important Note!</h1>
-                <p id="infopara">As i am on a free hosting plan, the server may temporarily spin down after 15 minutes of inactivity. It might take a few seconds to become active again. Please be patient for the initial load, subsequent interactions will be smooth.</p>
+                <p id="infopara">
+                  As i am on a free hosting plan, the server may temporarily
+                  spin down after 15 minutes of inactivity. It might take a few
+                  seconds to become active again. Please be patient for the
+                  initial load, subsequent interactions will be smooth.
+                </p>
               </div>
-              <div className="closer" style={{display:"flex",height:'100%',justifyContent:'flex-start',width:'0rem'}}>
+              <div
+                className="closer"
+                style={{
+                  display: "flex",
+                  height: "100%",
+                  justifyContent: "flex-start",
+                  width: "0rem",
+                }}
+              >
                 <button
                   type="button"
                   id="but4"
                   className="btn-close"
                   data-bs-dismiss="modal"
                   aria-label="Close"
-                  ref={cref3} style={{margin:'-1rem -1rem'}}
+                  ref={cref3}
+                  style={{ margin: "-1rem -1rem" }}
                 ></button>
               </div>
             </div>
@@ -264,10 +279,15 @@ const Login = () => {
         </div>
       </div>
       <div className="background">
-        <section
-          className="gradient-form"
-        >
-          <div className="container py-5 h-100">
+        <section className="gradient-form">
+          <div
+            className="container py-5"
+            style={{
+              minHeight: "100vh",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-xl-10">
                 <div
@@ -403,7 +423,10 @@ const Login = () => {
                       <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                         <h2 className="mb-4">It's so good to see you again</h2>
                         <p className="mb-0 my-2">
-                        Welcome back! Log in now to access your notes and join our vibrant community chat. Connect with like-minded individuals, share ideas, and collaborate in real-time while enjoying the convenience of secure note-taking.
+                          Welcome back! Log in now to access your notes and join
+                          our vibrant community chat. Connect with like-minded
+                          individuals, share ideas, and collaborate in real-time
+                          while enjoying the convenience of secure note-taking.
                         </p>
                         <p className="mb-0 my-2">
                           With our MERN stack web application, you can trust
