@@ -15,6 +15,24 @@ const Login = () => {
   const cref3 = useRef(null);
   const tex = useRef(null);
   const tex2 = useRef(null);
+
+  const timeoutRef = useRef(null);
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    clearTimeout(timeoutRef.current);
+    // Redirect to login page or any other desired action after logout
+    history.push("/login");
+  };
+
+  const setLogoutTimer = () => {
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    // Set new timeout for 15 minutes
+    timeoutRef.current = setTimeout(handleLogout, 15 * 60 * 1000); // 15 minutes in milliseconds
+  };
+
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
@@ -57,6 +75,7 @@ const Login = () => {
     if (json.success) {
       //save the auth token and redirect
       localStorage.setItem("token", json.authToken);
+      setLogoutTimer(); // Set the logout timer upon successful login
       if (tex.current) tex.current.textContent = "You're now Logged in";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
@@ -67,6 +86,12 @@ const Login = () => {
       updateNote(ref2, cref2, 1200);
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setLogoutTimer(); // Set the logout timer upon initial login
+    }
+  }, []);
 
   if (redirect === true) {
     setTimeout(() => {
@@ -211,7 +236,7 @@ const Login = () => {
 
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary d-none"
         data-bs-toggle="modal"
         id="but4"
         data-bs-target="#exampleModal3"
