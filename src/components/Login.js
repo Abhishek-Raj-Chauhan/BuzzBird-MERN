@@ -147,19 +147,15 @@ const Login = () => {
               >
                 <div
                   className="icon d-flex justify-content-center align-items-center"
-                  style={{
-                    height: "10rem",
-                    width: "10rem",
-                    marginBottom: "2rem",
-                  }}
+                  id="iyer6"
                 >
                   <i
                     className="fa-solid fa-check"
-                    style={{ color: "#ffffff", fontSize: "5rem" }}
+                    id="iyer5"
                   ></i>
                 </div>
 
-                <h2 ref={tex}>Success</h2>
+                <h2 className="infohead" ref={tex}>Success</h2>
                 <p className="infopara" ref={tex2}></p>
               </div>
               <button
@@ -211,19 +207,20 @@ const Login = () => {
               >
                 <div
                   className="icon d-flex justify-content-center align-items-center"
-                  style={{
-                    height: "10rem",
-                    width: "10rem",
-                    marginBottom: "2rem",
-                  }}
+                  // style={{
+                  //   height: "10rem",
+                  //   width: "10rem",
+                  //   marginBottom: "2rem",
+                  // }}
+                  id="iyer4"
                 >
                   <i
                     className="fa-solid fa-xmark"
-                    style={{ color: "#ffffff", fontSize: "5rem" }}
+                    id="iyer3"
                   ></i>
                 </div>
 
-                <h1>Login Failed</h1>
+                <h1 className="infohead">Login Failed</h1>
                 <p className="infopara">Please check your email or password and try again</p>
               </div>
               <button
@@ -277,7 +274,7 @@ const Login = () => {
                   <i id="iyer" class="fa-solid fa-info"></i>
                 </div>
 
-                <h1 id="infohead">Important Note!</h1>
+                <h1 className="infohead">Important Note!</h1>
                 <p className="infopara">
                   As I'm on a free hosting plan, the server may temporarily spin
                   down after 15 minutes of inactivity. Please refresh the page once or twice if login/signup dont work. Please be patient for the

@@ -104,20 +104,16 @@ const Signup = () => {
               >
                 <div
                   className="icon d-flex justify-content-center align-items-center"
-                  style={{
-                    height: "10rem",
-                    width: "10rem",
-                    marginBottom: "2rem",
-                  }}
+                  id="iyer10"
                 >
                   <i
                     className="fa-solid fa-check"
-                    style={{ color: "#ffffff", fontSize: "5rem" }}
+                    id="iyer9"
                   ></i>
                 </div>
 
-                <h3 ref={tex}>Success</h3>
-                <p ref={tex2}></p>
+                <h1 className="infohead" ref={tex}>Success</h1>
+                <p className="infopara" ref={tex2}></p>
               </div>
               <button
                 type="button"
@@ -168,20 +164,16 @@ const Signup = () => {
               >
                 <div
                   className="icon d-flex justify-content-center align-items-center"
-                  style={{
-                    height: "10rem",
-                    width: "10rem",
-                    marginBottom: "2rem",
-                  }}
+                  id="iyer8"
                 >
                   <i
                     className="fa-solid fa-xmark"
-                    style={{ color: "#ffffff", fontSize: "5rem" }}
+                    id="iyer7"
                   ></i>
                 </div>
 
-                <h1 ref={tex3}>Error</h1>
-                <p ref={tex4}></p>
+                <h1 className="infohead" ref={tex3}>Error</h1>
+                <p className="infopara" ref={tex4}></p>
               </div>
               <button
                 type="button"
