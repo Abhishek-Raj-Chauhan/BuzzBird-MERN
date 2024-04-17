@@ -29,10 +29,9 @@ const Login = () => {
       localStorage.clear();
     }
   }, []);
+
   useEffect(() => {
-      if (tex.current) tex.current.textContent = "Welcome";
-      if (tex2.current) tex2.current.textContent = "As i am using a free plan to host my website after 15 min of inactivity the server spins down and might take few seconds to again be active, after that everything will be smooth, so just wait for first time";
-      updateNote(ref, cref, 1500);
+    updateNote(ref2, cref2, 1200);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -191,6 +190,70 @@ const Login = () => {
 
                 <h1>Login Failed</h1>
                 <p>Please check your email or password and try again</p>
+              </div>
+              <button
+                type="button"
+                id="but4"
+                className="btn-close d-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                ref={cref2}
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        className="btn btn-primary"
+        data-bs-toggle="modal"
+        id="but3"
+        data-bs-target="#exampleModal2"
+        ref={ref2}
+      >
+        Info
+      </button>
+
+      <div
+        className="modal fade"
+        id="exampleModal2"
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          className="modal-dialog d-flex justify-content-center align-items-center"
+          style={{ height: "100%" }}
+        >
+          <div
+            className="modal-content d-flex flex-row justify-content-center align-items-center"
+            style={{ height: "22rem", width: "79%" }}
+          >
+            <div
+              className="modal-header"
+              style={{ height: "100%", width: "100%" }}
+            >
+              <div
+                className="modalbox error col-sm-8 col-md-6 col-lg-5 center animate"
+                style={{ height: "89%", width: "89%", color: "black" }}
+              >
+                <div
+                  className="icon d-flex justify-content-center align-items-center"
+                  style={{
+                    height: "10rem",
+                    width: "10rem",
+                    marginBottom: "2rem",
+                  }}
+                >
+                  <i
+                    className="fa-solid fa-xmark"
+                    style={{ color: "#ffffff", fontSize: "5rem" }}
+                  ></i>
+                </div>
+
+                <h1>Important Note!</h1>
+                <p>As i am on a free hosting plan, the server may temporarily spin down after 15 minutes of inactivity. It might take a few seconds to become active again. Please be patient for the initial load, subsequent interactions will be smooth.</p>
               </div>
               <button
                 type="button"
