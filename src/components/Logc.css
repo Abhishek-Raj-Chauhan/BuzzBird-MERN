@@ -449,7 +449,10 @@
     color: #ffffff;
   }
   #rower{
-    margin-top: 1rem;
+    margin-top: 1.2rem;
+  }
+  #rower2{
+    margin-top: 1.2rem;
   }
 }
 
@@ -471,6 +474,9 @@
   #iyer{
     color: #ffffff;
     font-size: 5rem;
+  }
+  #rower{
+    margin-top: 2rem;
   }
   #rower{
     margin-top: 2rem;
