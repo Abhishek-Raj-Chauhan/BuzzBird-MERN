@@ -12,17 +12,15 @@ const verifyEmail = expressAsyncHandler(async (req, res) => {
     const otpEntry = await Otp.findOne({ otp: otp });
     if (otpEntry) {
       // OTP is valid
-      success=true;
       await Otp.deleteMany({}); // Remove OTP from database after verification
-      res.status(200).send("OTP verified successfully");
+      res.status(200).json({ success: true, message: "OTP verified successfully" });
     } else {
       // Invalid OTP
-      success=false;
-      res.status(400).send("Invalid OTP");
+      res.status(400).json({ success: false, message: "Invalid OTP" });
     }
   } catch (error) {
     console.error("Error verifying OTP:", error);
-    res.status(500).send("Error verifying OTP");
+    res.status(500).json({ success: false, message: "Error verifying OTP" });
   }
 
 });
