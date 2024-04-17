@@ -1,7 +1,6 @@
 import React from "react";
 import Notes from "./Notes";
 import AddNote from "./AddNote";
-import Navbar from "./Navbar";
 
 const Home = (props) => {
   if (document.getElementById("navBar"))
@@ -20,7 +19,6 @@ const Home = (props) => {
           background: "linear-gradient(to right, #833ab4, #2720a1, #121120)",
         }}
       >
-        <Navbar />
         <Notes toggle={props.toggle} />
         {window.innerWidth > 600 ? (
           <AddNote toggle={props.toggle} alerter={props.alerter} />
