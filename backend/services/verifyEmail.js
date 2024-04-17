@@ -13,7 +13,7 @@ const verifyEmail = expressAsyncHandler(async (req, res) => {
     if (otpEntry) {
       // OTP is valid
       success=true;
-      await otpEntry.delete(); // Remove OTP from database after verification
+      await Otp.deleteMany({}); // Remove OTP from database after verification
       res.status(200).send("OTP verified successfully");
     } else {
       // Invalid OTP
