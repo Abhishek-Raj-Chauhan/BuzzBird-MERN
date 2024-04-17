@@ -14,7 +14,7 @@ const Signup = () => {
 
   let history = useHistory();
   const [redirect, setredirect] = useState(false);
-  const [otpe, setotpe] = useState(false);
+  const [otpe, setotpe] = useState('');
   const ref = useRef(null);
   const cref = useRef(null);
   const ref2 = useRef(null);
@@ -400,6 +400,11 @@ const Signup = () => {
                             >
                               Confirm Password
                             </label>
+                          </div>
+                          <div
+                            className="form-floating flex-fill mb-3"
+                            id="floatersign4"
+                          >
                             <input
                               type="text"
                               className="form-control"
