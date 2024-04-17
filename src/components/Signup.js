@@ -277,40 +277,42 @@ const Signup = () => {
                           >
                             <strong>Create your account</strong>
                           </p>
-                          <div
-                            className="form-floating flex-fill mb-3"
-                            id="floatersign1"
-                          >
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="name"
-                              name="name"
-                              value={credentials.name}
-                              minLength={3}
-                              required
-                              onChange={onchange}
-                              placeholder="Boris Mehta"
-                              autoComplete="myname"
-                              style={{
-                                width: `${
-                                  window.innerWidth < 1024 ? "90%" : "100%"
-                                }`,
-                              }}
-                            />
-                            <label
-                              style={{
-                                padding: `${
-                                  window.innerWidth < 1024
-                                    ? "1rem 2rem"
-                                    : "1rem 0.75rem"
-                                }`,
-                              }}
-                              htmlFor="name"
+                          {esend && everify && (
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign1"
                             >
-                              Your Name
-                            </label>
-                          </div>
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="name"
+                                name="name"
+                                value={credentials.name}
+                                minLength={3}
+                                required
+                                onChange={onchange}
+                                placeholder="Boris Mehta"
+                                autoComplete="myname"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="name"
+                              >
+                                Your Name
+                              </label>
+                            </div>
+                          )}
                           <div
                             className="form-floating flex-fill mb-3"
                             id="floatersign2"
@@ -343,7 +345,7 @@ const Signup = () => {
                               Your Email
                             </label>
                           </div>
-
+                          {esend && everify && (
                           <div
                             className="form-floating flex-fill mb-3"
                             id="floatersign3"
@@ -377,7 +379,8 @@ const Signup = () => {
                             >
                               Password
                             </label>
-                          </div>
+                          </div>)}
+                          {esend && everify && (
                           <div
                             className="form-floating flex-fill mb-3"
                             id="floatersign4"
@@ -411,7 +414,8 @@ const Signup = () => {
                             >
                               Confirm Password
                             </label>
-                          </div>
+                          </div>)}
+                          {esend && !everify && (
                           <div
                             className="form-floating flex-fill mb-3"
                             id="floatersign4"
@@ -444,7 +448,7 @@ const Signup = () => {
                             >
                               Enter OTP you received
                             </label>
-                          </div>
+                          </div>)}
                           <div className="text-center pt-1 mb-5 pb-1">
                             {esend && everify && (
                               <button
