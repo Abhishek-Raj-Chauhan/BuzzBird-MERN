@@ -112,7 +112,7 @@ const Signup = () => {
     if (json.success) {
       seteverify("true");
       if (tex.current)
-        tex.current.textContent = "Email Verification Successfull";
+        tex.current.textContent = "Verification Successful";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       updateNote(ref, cref, 1000);
