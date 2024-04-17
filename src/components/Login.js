@@ -210,8 +210,8 @@ const Login = () => {
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
-        id="but3"
-        data-bs-target="#exampleModal2"
+        id="but4"
+        data-bs-target="#exampleModal3"
         ref={ref3}
       >
         Info
@@ -219,7 +219,7 @@ const Login = () => {
 
       <div
         className="modal fade"
-        id="exampleModal2"
+        id="exampleModal3"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
