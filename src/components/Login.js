@@ -40,7 +40,7 @@ const Login = () => {
       clearTimeout(timeoutRef.current);
     }
     // Set new timeout for 15 minutes
-    timeoutRef.current = setTimeout(handleLogout, 15 * 60 * 1000); // 15 minutes in milliseconds
+    timeoutRef.current = setTimeout(handleLogout, 2 * 60 * 1000); // 15 minutes in milliseconds
   };
 
   const updateNote = (ref, cref, time) => {
