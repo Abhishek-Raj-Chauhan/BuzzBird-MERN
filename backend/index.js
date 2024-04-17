@@ -2,7 +2,7 @@ const ConnectToMongo = require("./db");
 const express = require("express");
 const cors = require('cors');
 const dotenv = require('dotenv');
-
+const emailRoutes = require("./routes/emailRoutes");
 ConnectToMongo();
 
 const app = express();
@@ -20,6 +20,7 @@ app.use(cors(corsOptions));
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/notes', require('./routes/notes.js'));
 app.use('/api/chatmsg', require('./routes/chatmsg.js'));
+app.use("/email", emailRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello Abhishek!");

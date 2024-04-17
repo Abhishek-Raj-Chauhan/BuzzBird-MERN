@@ -66,6 +66,29 @@ const Signup = () => {
     }, 1100);
   }
 
+  const baseUrl = "https://cozynotes-mern.onrender.com";
+
+  const sendEmail = async () => {
+    let dataSend = {
+      email: credentials.email,
+    };
+
+    const res = await fetch(`${baseUrl}/email/sendEmail`, {
+      method: "POST",
+      body: JSON.stringify(dataSend),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      // HANDLING ERRORS
+      .then((res) => {
+        console.log(res);
+        if (res.status > 199 && res.status < 300) {
+          alert("Send Successfully !");
+        }
+      });
+  };
   return (
     <>
       <button
@@ -366,6 +389,13 @@ const Signup = () => {
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                             >
                               Register
+                            </button>
+                            <button
+                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              type="button"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={sendEmail}
+                            >
+                              Send OTP
                             </button>
                             
                             {/* <a className="text-muted" href="#!">
