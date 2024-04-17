@@ -203,7 +203,11 @@ const Signup = () => {
       </div>
       <div className="background">
         <section className="gradient-form">
-          <div className="container py-5">
+          <div className="container py-5" style={{
+              minHeight: "100vh",
+              display: "flex",
+              justifyContent: "center",
+            }}>
             <div className="row d-flex justify-content-center align-items-center" id="rower">
               <div className="col-xl-10">
                 <div
