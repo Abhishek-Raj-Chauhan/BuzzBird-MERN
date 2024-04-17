@@ -350,7 +350,34 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 280px){
+  .gradient-form {
+    background: transparent;
+    margin-top: 2rem
+  }
+  .modal-content{
+    height: 26rem;
+    width: 100%;
+  }
+  #infohead{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  #infopara{
+    font-size: small;
+  }
+  #iyer2{
+    height: 7rem;
+    width: 7rem;
+    margin-bottom: 2rem;
+  }
+  #iyer{
+    font-size: 4rem;
+    color: #ffffff;
+  }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 600px) {
   .gradient-form {
     background: transparent;
     margin-top: 2rem
