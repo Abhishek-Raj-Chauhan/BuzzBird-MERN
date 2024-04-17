@@ -14,6 +14,7 @@ const Signup = () => {
 
   let history = useHistory();
   const [redirect, setredirect] = useState(false);
+  const [otpe, setotpe] = useState(false);
   const ref = useRef(null);
   const cref = useRef(null);
   const ref2 = useRef(null);
@@ -88,6 +89,24 @@ const Signup = () => {
           alert("Send Successfully !");
         }
       });
+  };
+  const verifyEmail = async () => {
+    let dataSend = {
+      otpe: otpe,
+    };
+
+    const res = await fetch(`${baseUrl}/email/verifyEmail`, {
+      method: "POST",
+      body: JSON.stringify(dataSend),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+    const json = await response.json();
+    if(json.success){
+      console.log('otp verification successfull');
+    }
   };
   return (
     <>
@@ -381,6 +400,34 @@ const Signup = () => {
                             >
                               Confirm Password
                             </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="otpe"
+                              name="otpe"
+                              value={otpe}
+                              minLength={5}
+                              required
+                              onChange={(e) => setotpe(e.target.value)}
+                              placeholder="OTP"
+                              style={{
+                                width: `${
+                                  window.innerWidth < 1024 ? "90%" : "100%"
+                                }`,
+                              }}
+                            />
+                            <label
+                              style={{
+                                padding: `${
+                                  window.innerWidth < 1024
+                                    ? "1rem 2rem"
+                                    : "1rem 0.75rem"
+                                }`,
+                              }}
+                              htmlFor="password"
+                            >
+                              Enter OTP you received
+                            </label>
                           </div>
                           <div className="text-center pt-1 mb-5 pb-1">
                             <button
@@ -396,6 +443,14 @@ const Signup = () => {
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={sendEmail}
                             >
                               Send OTP
+                            </button>
+                            
+                            <button
+                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              type="button"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={verifyEmail}
+                            >
+                              Verify OTP
                             </button>
                             
                             {/* <a className="text-muted" href="#!">

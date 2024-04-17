@@ -2,6 +2,7 @@ const expressAsyncHandler = require("express-async-handler");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
 const generateOTP = require("./generateOTP");
+const Otp = require("../models/otp");
 dotenv.config();
 
 let transporter = nodemailer.createTransport({
@@ -19,6 +20,10 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
   console.log(email);
 
   const otp = generateOTP();
+  const otpEntry = new Otp({
+    otp: otp,
+  });
+  await otpEntry.save();
 
   var mailOptions = {
     from: process.env.SMTP_MAIL,
