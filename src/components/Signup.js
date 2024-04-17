@@ -14,7 +14,9 @@ const Signup = () => {
 
   let history = useHistory();
   const [redirect, setredirect] = useState(false);
-  const [otpe, setotpe] = useState('');
+  const [otpe, setotpe] = useState("");
+  const [esend, setesend] = useState(false);
+  const [everify, seteverify] = useState(false);
   const ref = useRef(null);
   const cref = useRef(null);
   const ref2 = useRef(null);
@@ -23,9 +25,6 @@ const Signup = () => {
   const tex2 = useRef(null);
   const tex3 = useRef(null);
   const tex4 = useRef(null);
-  let pr1 = '';
-  let pr2 = 'd-none';
-  let pr3 = 'd-none';
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
@@ -35,7 +34,8 @@ const Signup = () => {
   const handlesignUp = async (e) => {
     const { name, email, password } = credentials;
     e.preventDefault();
-    const response = await fetch(`https://cozynotes-mern.onrender.com/api/auth/createuser`,
+    const response = await fetch(
+      `https://cozynotes-mern.onrender.com/api/auth/createuser`,
       {
         method: "POST",
         credentials: "same-origin",
@@ -84,16 +84,15 @@ const Signup = () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    })
+    });
     const json = await res.json();
-    if(json.success){
-      pr1 = 'd-none';
-      pr2 = '';
+    if (json.success) {
+      setesend(true);
       if (tex.current) tex.current.textContent = "Email sent Successfully";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       updateNote(ref, cref, 1000);
-      console.log('Email sent successfully');
+      console.log("Email sent successfully");
     }
   };
   const verifyEmail = async () => {
@@ -108,16 +107,16 @@ const Signup = () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    })
+    });
     const json = await res.json();
-    if(json.success){
-      pr2='d-none';
-      pr3='';
-      if (tex.current) tex.current.textContent = "Email Verification Successfull";
+    if (json.success) {
+      seteverify("true");
+      if (tex.current)
+        tex.current.textContent = "Email Verification Successfull";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       updateNote(ref, cref, 1000);
-      console.log('otp verification successfull');
+      console.log("otp verification successfull");
     }
   };
   return (
@@ -160,10 +159,7 @@ const Signup = () => {
                   className="icon d-flex justify-content-center align-items-center"
                   id="iyer10"
                 >
-                  <i
-                    className="fa-solid fa-check"
-                    id="iyer9"
-                  ></i>
+                  <i className="fa-solid fa-check" id="iyer9"></i>
                 </div>
 
                 <h1 ref={tex}>Success</h1>
@@ -220,10 +216,7 @@ const Signup = () => {
                   className="icon d-flex justify-content-center align-items-center"
                   id="iyer8"
                 >
-                  <i
-                    className="fa-solid fa-xmark"
-                    id="iyer7"
-                  ></i>
+                  <i className="fa-solid fa-xmark" id="iyer7"></i>
                 </div>
 
                 <h1 ref={tex3}>Error</h1>
@@ -243,12 +236,18 @@ const Signup = () => {
       </div>
       <div className="background">
         <section className="gradient-form">
-          <div className="container py-5" style={{
+          <div
+            className="container py-5"
+            style={{
               minHeight: "100vh",
               display: "flex",
               justifyContent: "center",
-            }}>
-            <div className="row d-flex justify-content-center align-items-center" id="rower">
+            }}
+          >
+            <div
+              className="row d-flex justify-content-center align-items-center"
+              id="rower"
+            >
               <div className="col-xl-10">
                 <div
                   className="car rounded-3 text-black"
@@ -447,29 +446,45 @@ const Signup = () => {
                             </label>
                           </div>
                           <div className="text-center pt-1 mb-5 pb-1">
-                            <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr3}`}
-                              type="submit"
-                              style={{ padding: "1.2rem", borderRadius: "0px" ,display: pr3 === 'd-none' ? 'none' : 'block'}}
-                            >
-                              Register
-                            </button>
-                            <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr1}`}
-                              type="button"
-                              style={{ padding: "1.2rem", borderRadius: "0px", display: pr1 === 'd-none' ? 'none' : 'block'}} onClick={sendEmail}
-                            >
-                              Send OTP
-                            </button>
-                            
-                            <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr2}`}
-                              type="button"
-                              style={{ padding: "1.2rem", borderRadius: "0px" ,display: pr2 === 'd-none' ? 'none' : 'block'}} onClick={verifyEmail}
-                            >
-                              Verify OTP
-                            </button>
-                            
+                            {esend && everify && (
+                              <button
+                                className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3`}
+                                type="submit"
+                                style={{
+                                  padding: "1.2rem",
+                                  borderRadius: "0px",
+                                }}
+                              >
+                                Register
+                              </button>
+                            )}
+                            {!esend && (
+                              <button
+                                className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3`}
+                                type="button"
+                                style={{
+                                  padding: "1.2rem",
+                                  borderRadius: "0px",
+                                }}
+                                onClick={sendEmail}
+                              >
+                                Send OTP
+                              </button>
+                            )}
+                            {esend && !everify && (
+                              <button
+                                className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3`}
+                                type="button"
+                                style={{
+                                  padding: "1.2rem",
+                                  borderRadius: "0px",
+                                }}
+                                onClick={verifyEmail}
+                              >
+                                Verify OTP
+                              </button>
+                            )}
+
                             {/* <a className="text-muted" href="#!">
                         Forgot password?
                       </a> */}
