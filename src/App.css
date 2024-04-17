@@ -149,14 +149,15 @@
   }
   #ntitem {
     height: 36%;
-    background: transparent;
+    background: #000021;
+    border-bottom: 0.5px solid grey;
   }
   #ntitem2 {
     background: transparent;
   }
   #ntitem:hover {
     height: 36%;
-    background-color: #000021;
+    background-color: transparent;
   }
   body {
     background: linear-gradient(to right, #833ab4, #2720a1, #121120);
