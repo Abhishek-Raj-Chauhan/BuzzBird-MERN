@@ -348,7 +348,7 @@
 @media only screen and (max-width: 280px){
   .gradient-form {
     background: transparent;
-    margin-top: 0rem;
+    margin-top: 2rem;
     min-height:100vh
   }
   .modal-content{
@@ -376,7 +376,7 @@
 @media only screen and (min-width: 281px) and (max-width: 600px) {
   .gradient-form {
     background: transparent;
-    margin-top: 0rem;
+    margin-top: 2rem;
     min-height:100vh
   }
   .modal-content{
