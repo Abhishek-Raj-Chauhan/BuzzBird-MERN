@@ -23,9 +23,9 @@ const Signup = () => {
   const tex2 = useRef(null);
   const tex3 = useRef(null);
   const tex4 = useRef(null);
-  const pr1 = '';
-  const pr2 = 'none';
-  const pr3 = 'none';
+  let pr1 = '';
+  let pr2 = 'none';
+  let pr3 = 'none';
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
