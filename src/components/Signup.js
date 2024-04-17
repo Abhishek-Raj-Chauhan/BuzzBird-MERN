@@ -465,7 +465,7 @@ const Signup = () => {
                             <button
                               className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr2}`}
                               type="button"
-                              style={{ padding: "1.2rem", borderRadius: "0px" ,display: pr1 === 'd-none' ? 'none' : 'block'}} onClick={verifyEmail}
+                              style={{ padding: "1.2rem", borderRadius: "0px" ,display: pr2 === 'd-none' ? 'none' : 'block'}} onClick={verifyEmail}
                             >
                               Verify OTP
                             </button>
