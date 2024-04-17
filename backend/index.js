@@ -11,7 +11,6 @@ const port = process.env.PORT || 4000;
 
 // Available Routes
 app.use(express.json());
-app.use(bodyParser.json());
 // Configure CORS to allow requests from specific origin
 const corsOptions = {
   origin: 'https://cozynotes-mern-1.onrender.com'
