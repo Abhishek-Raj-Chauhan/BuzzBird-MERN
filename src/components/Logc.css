@@ -349,7 +349,7 @@
   .gradient-form {
     background: transparent;
     margin-top: 0rem;
-    height:100vh
+    min-height:100vh
   }
   .modal-content{
     height: 26rem;
@@ -377,7 +377,7 @@
   .gradient-form {
     background: transparent;
     margin-top: 0rem;
-    height:100vh
+    min-height:100vh
   }
   .modal-content{
     height: 26rem;
@@ -405,7 +405,7 @@
   .gradient-form {
     background: transparent;
     margin-top: 0rem;
-    height:100vh
+    min-height:100vh
   }
   .modal-content{
     height: 26rem;
@@ -426,7 +426,7 @@
   .gradient-form {
     background: transparent;
     margin-top: 0rem;
-    height:100vh
+    min-height:100vh
   }
   .modal-content{
     height: 26rem;
