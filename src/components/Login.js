@@ -251,7 +251,7 @@ const Login = () => {
                 <p id="infopara">
                   As I'm on a free hosting plan, the server may temporarily spin
                   down after 15 minutes of inactivity. Please refresh the page once or twice if login/signup dont work. Please be patient for the
-                  initial load; subsequent interactions will be smooth.
+                  initial load, subsequent interactions will be smooth.
                 </p>
               </div>
               <div
