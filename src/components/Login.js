@@ -254,16 +254,7 @@ const Login = () => {
                 <h1>Important Note!</h1>
                 <p>As i am on a free hosting plan, the server may temporarily spin down after 15 minutes of inactivity. It might take a few seconds to become active again. Please be patient for the initial load, subsequent interactions will be smooth.</p>
               </div>
-              <div className="closer" style={{display:"flex",height:'100%',justifyContent:'flex-start'}}>
-                <button
-                  type="button"
-                  id="but4"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                  ref={cref3}
-                ></button>
-              </div>
+              
             </div>
           </div>
         </div>
