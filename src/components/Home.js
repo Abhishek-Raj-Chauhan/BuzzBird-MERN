@@ -3,6 +3,9 @@ import Notes from "./Notes";
 import AddNote from "./AddNote";
 
 const Home = (props) => {
+  if (document.getElementById("navBar"))
+    document.getElementById("navBar").style.background =
+      "linear-gradient(to right, #833ab4, #2720a1, #121120)";
   return (
     <>
       <div
