@@ -23,8 +23,13 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
   var mailOptions = {
     from: process.env.SMTP_MAIL,
     to: email,
-    subject: "OTP form Callback Coding",
-    text: `Your OTP is: ${otp}`,
+    subject: "login OTP from CozyNotes",
+    html: `<p>Thank you for choosing CozyNotes for your note-taking needs. As requested, here is your One-Time Password (OTP) to complete the sign-up process:</p>
+    <p><strong>Your OTP is: ${otp}</strong></p>
+    <p>Please enter this OTP in the designated field to verify your account and gain access to our intuitive note-taking interface.</p>
+    <p>At CozyNotes, we prioritize the security and privacy of your personal information. Rest assured that your data is protected by industry-leading security measures, ensuring that only you have access to your notes.</p>
+    <p>If you have any questions or need further assistance, feel free to reach out to our support team.</p>
+    <p>Thank you for joining our community of note-takers!</p>`,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
