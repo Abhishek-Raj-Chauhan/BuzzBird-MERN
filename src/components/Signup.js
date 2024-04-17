@@ -103,7 +103,7 @@ const Signup = () => {
         "Content-Type": "application/json",
       },
     })
-    const json = await response.json();
+    const json = await res.json();
     if(json.success){
       console.log('otp verification successfull');
     }
