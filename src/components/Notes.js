@@ -41,6 +41,12 @@ function Notes(props) {
   const onchange = (event) => {
     setnote({ ...note, [event.target.name]: event.target.value });
   };
+  if (document.getElementById("navBar"))
+    document.getElementById("navBar").style.background = `${
+      window.innerWidth < 991
+        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
+        : "transparent"
+    }`;
   return (
     <>
       <button
