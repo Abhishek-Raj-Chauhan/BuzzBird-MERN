@@ -248,10 +248,7 @@ const Login = () => {
                     marginBottom: "2rem",
                   }}
                 >
-                  <i
-                    className="fa-solid fa-xmark"
-                    style={{ color: "#ffffff", fontSize: "5rem" }}
-                  ></i>
+                  <i class="fa-solid fa-info" style={{ color: "#ffffff", fontSize: "5rem" }}></i>
                 </div>
 
                 <h1>Important Note!</h1>
