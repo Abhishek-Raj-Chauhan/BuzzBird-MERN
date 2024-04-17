@@ -1,44 +1,15 @@
 import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
-import axios from "axios";
 const Signup = () => {
   const [credentials, setcredentials] = useState({
     name: "",
     email: "",
     password: "",
     cpassword: "",
-    otp: "",
   });
   const onchange = (event) => {
     setcredentials({ ...credentials, [event.target.name]: event.target.value });
-  };
-
-  const sendOTP = async () => {
-    console.log(credentials.email);
-    try {
-      const response = await axios.post("/api/auth/sendOTP", {
-        email: credentials.email,
-      });
-      console.log(response)
-      // alert(response.data); // Alert success message
-    } catch (error) {
-      console.error("Error sending OTP:", error.response.data);
-      alert("Error sending OTP");
-    }
-  };
-
-  const verifyOTP = async () => {
-    try {
-      const response = await axios.post("/api/auth/verifyOTP", {
-        otp: credentials.otp,
-      });
-      alert(response.data); // Alert success message
-      // Proceed with signup or other actions after OTP verification
-    } catch (error) {
-      console.error("Error verifying OTP:", error.response.data);
-      alert("Invalid OTP");
-    }
   };
 
   let history = useHistory();
@@ -398,13 +369,6 @@ const Signup = () => {
                               Confirm Password
                             </label>
                           </div>
-                          <input
-                            type="text"
-                            name="otp"
-                            value={credentials.otp}
-                            onChange={onchange}
-                            placeholder="Enter OTP"
-                          />
                           <div className="text-center pt-1 mb-5 pb-1">
                             <button
                               className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
@@ -413,22 +377,7 @@ const Signup = () => {
                             >
                               Register
                             </button>
-                            <button
-                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
-                              type="button"
-                              style={{ padding: "1.2rem", borderRadius: "0px" }}
-                              onClick={sendOTP}
-                            >
-                              Send otp
-                            </button>
-                            <button
-                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
-                              type="button"
-                              style={{ padding: "1.2rem", borderRadius: "0px" }}
-                              onClick={verifyOTP}
-                            >
-                              verify otp
-                            </button>
+                            
                             {/* <a className="text-muted" href="#!">
                         Forgot password?
                       </a> */}

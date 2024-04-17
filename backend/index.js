@@ -2,7 +2,6 @@ const ConnectToMongo = require("./db");
 const express = require("express");
 const cors = require('cors');
 const dotenv = require('dotenv');
-const bodyParser = require("body-parser");
 
 ConnectToMongo();
 
@@ -22,7 +21,6 @@ app.use(cors(corsOptions));
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/notes', require('./routes/notes.js'));
 app.use('/api/chatmsg', require('./routes/chatmsg.js'));
-app.use('/api/otp', require('./routes/otp.js'));
 
 app.get("/", (req, res) => {
   res.send("Hello Abhishek!");
