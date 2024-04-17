@@ -24,8 +24,8 @@ const Signup = () => {
   const tex3 = useRef(null);
   const tex4 = useRef(null);
   let pr1 = '';
-  let pr2 = 'none';
-  let pr3 = 'none';
+  let pr2 = 'd-none';
+  let pr3 = 'd-none';
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
@@ -87,7 +87,7 @@ const Signup = () => {
     })
     const json = await res.json();
     if(json.success){
-      pr1 = 'none';
+      pr1 = 'd-none';
       pr2 = '';
       if (tex.current) tex.current.textContent = "Email sent Successfully";
       if (tex2.current)
@@ -111,7 +111,7 @@ const Signup = () => {
     })
     const json = await res.json();
     if(json.success){
-      pr2='none';
+      pr2='d-none';
       pr3='';
       if (tex.current) tex.current.textContent = "Email Verification Successfull";
       if (tex2.current)
@@ -448,14 +448,14 @@ const Signup = () => {
                           </div>
                           <div className="text-center pt-1 mb-5 pb-1">
                             <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr3}`}
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr3}`}
                               type="submit"
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                             >
                               Register
                             </button>
                             <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr1}`}
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr1}`}
                               type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={sendEmail}
                             >
@@ -463,7 +463,7 @@ const Signup = () => {
                             </button>
                             
                             <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr2}`}
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 ${pr2}`}
                               type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={verifyEmail}
                             >
