@@ -366,6 +366,15 @@
   #infopara{
     font-size: small;
   }
+  #iyer2{
+    height: 7rem;
+    width: 7rem;
+    margin-bottom: 2rem;
+  }
+  #iyer{
+    font-size: 4rem;
+    color: #ffffff;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -377,6 +386,15 @@
     height: 26rem;
     width: 100%;
   }
+  #iyer2{
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+  }
+  #iyer{
+    font-size: 5rem;
+    color: #ffffff;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -387,6 +405,15 @@
   .modal-content{
     height: 26rem;
     width: 100%;
+  }
+  #iyer2{
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+  }
+  #iyer{
+    color: #ffffff;
+    font-size: 5rem;
   }
 }
 

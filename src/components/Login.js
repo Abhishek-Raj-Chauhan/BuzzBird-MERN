@@ -241,14 +241,9 @@ const Login = () => {
                 style={{ height: "89%", width: "89%", color: "black" }}
               >
                 <div
-                  className="icon d-flex justify-content-center align-items-center"
-                  style={{
-                    height: "10rem",
-                    width: "10rem",
-                    marginBottom: "2rem",
-                  }}
+                  className="icon d-flex justify-content-center align-items-center" id="iyer2"
                 >
-                  <i class="fa-solid fa-info" style={{ color: "#ffffff", fontSize: "5rem" }}></i>
+                  <i id="iyer" class="fa-solid fa-info"></i>
                 </div>
 
                 <h1 id="infohead">Important Note!</h1>
