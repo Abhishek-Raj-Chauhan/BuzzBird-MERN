@@ -15,6 +15,7 @@ const Signup = () => {
   };
 
   const sendOTP = async () => {
+    console.log(credentials.email);
     try {
       const response = await axios.post("/api/auth/sendOTP", {
         email: credentials.email,
@@ -29,7 +30,6 @@ const Signup = () => {
   const verifyOTP = async () => {
     try {
       const response = await axios.post("/api/auth/verifyOTP", {
-        email: credentials.email,
         otp: credentials.otp,
       });
       alert(response.data); // Alert success message
