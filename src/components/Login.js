@@ -160,7 +160,7 @@ const Login = () => {
                 </div>
 
                 <h2 ref={tex}>Success</h2>
-                <p ref={tex2}></p>
+                <p className="infopara" ref={tex2}></p>
               </div>
               <button
                 type="button"
@@ -224,7 +224,7 @@ const Login = () => {
                 </div>
 
                 <h1>Login Failed</h1>
-                <p>Please check your email or password and try again</p>
+                <p className="infopara">Please check your email or password and try again</p>
               </div>
               <button
                 type="button"
@@ -278,7 +278,7 @@ const Login = () => {
                 </div>
 
                 <h1 id="infohead">Important Note!</h1>
-                <p id="infopara">
+                <p className="infopara">
                   As I'm on a free hosting plan, the server may temporarily spin
                   down after 15 minutes of inactivity. Please refresh the page once or twice if login/signup dont work. Please be patient for the
                   initial load, subsequent interactions will be smooth.
