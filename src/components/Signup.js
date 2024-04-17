@@ -111,8 +111,7 @@ const Signup = () => {
     const json = await res.json();
     if (json.success) {
       seteverify("true");
-      if (tex.current)
-        tex.current.textContent = "Verification Successful";
+      if (tex.current) tex.current.textContent = "Verification Successful";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       updateNote(ref, cref, 1000);
@@ -346,109 +345,112 @@ const Signup = () => {
                             </label>
                           </div>
                           {esend && everify && (
-                          <div
-                            className="form-floating flex-fill mb-3"
-                            id="floatersign3"
-                          >
-                            <input
-                              type="password"
-                              className="form-control"
-                              id="password"
-                              name="password"
-                              value={credentials.password}
-                              minLength={5}
-                              required
-                              onChange={onchange}
-                              placeholder="Password"
-                              autoComplete="new-password"
-                              style={{
-                                width: `${
-                                  window.innerWidth < 1024 ? "90%" : "100%"
-                                }`,
-                              }}
-                            />
-                            <label
-                              style={{
-                                padding: `${
-                                  window.innerWidth < 1024
-                                    ? "1rem 2rem"
-                                    : "1rem 0.75rem"
-                                }`,
-                              }}
-                              htmlFor="password"
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign3"
                             >
-                              Password
-                            </label>
-                          </div>)}
+                              <input
+                                type="password"
+                                className="form-control"
+                                id="password"
+                                name="password"
+                                value={credentials.password}
+                                minLength={5}
+                                required
+                                onChange={onchange}
+                                placeholder="Password"
+                                autoComplete="new-password"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="password"
+                              >
+                                Password
+                              </label>
+                            </div>
+                          )}
                           {esend && everify && (
-                          <div
-                            className="form-floating flex-fill mb-3"
-                            id="floatersign4"
-                          >
-                            <input
-                              type="password"
-                              className="form-control"
-                              id="cpassword"
-                              name="cpassword"
-                              value={credentials.cpassword}
-                              minLength={5}
-                              required
-                              onChange={onchange}
-                              placeholder="Password"
-                              autoComplete="new-password"
-                              style={{
-                                width: `${
-                                  window.innerWidth < 1024 ? "90%" : "100%"
-                                }`,
-                              }}
-                            />
-                            <label
-                              style={{
-                                padding: `${
-                                  window.innerWidth < 1024
-                                    ? "1rem 2rem"
-                                    : "1rem 0.75rem"
-                                }`,
-                              }}
-                              htmlFor="password"
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign4"
                             >
-                              Confirm Password
-                            </label>
-                          </div>)}
+                              <input
+                                type="password"
+                                className="form-control"
+                                id="cpassword"
+                                name="cpassword"
+                                value={credentials.cpassword}
+                                minLength={5}
+                                required
+                                onChange={onchange}
+                                placeholder="Password"
+                                autoComplete="new-password"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="password"
+                              >
+                                Confirm Password
+                              </label>
+                            </div>
+                          )}
                           {esend && !everify && (
-                          <div
-                            className="form-floating flex-fill mb-3"
-                            id="floatersign4"
-                          >
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="otpe"
-                              name="otpe"
-                              value={otpe}
-                              minLength={5}
-                              required
-                              onChange={(e) => setotpe(e.target.value)}
-                              placeholder="OTP"
-                              style={{
-                                width: `${
-                                  window.innerWidth < 1024 ? "90%" : "100%"
-                                }`,
-                              }}
-                            />
-                            <label
-                              style={{
-                                padding: `${
-                                  window.innerWidth < 1024
-                                    ? "1rem 2rem"
-                                    : "1rem 0.75rem"
-                                }`,
-                              }}
-                              htmlFor="password"
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign4"
                             >
-                              Enter OTP you received
-                            </label>
-                          </div>)}
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="otpe"
+                                name="otpe"
+                                value={otpe}
+                                minLength={5}
+                                required
+                                onChange={(e) => setotpe(e.target.value)}
+                                placeholder="OTP"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="password"
+                              >
+                                Enter OTP you received
+                              </label>
+                            </div>
+                          )}
                           <div className="text-center pt-1 mb-5 pb-1">
                             {esend && everify && (
                               <button
