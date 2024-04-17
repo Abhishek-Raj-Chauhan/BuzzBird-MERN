@@ -5,6 +5,6 @@ const { sendEmail } = require("../services/sendEmail");
 const { verifyEmail } = require("../services/verifyEmail");
 
 router.post("/sendEmail", sendEmail);
-router.post("/veridyEmail", verifyEmail);
+router.post("/verifyEmail", verifyEmail);
 
 module.exports = router;
