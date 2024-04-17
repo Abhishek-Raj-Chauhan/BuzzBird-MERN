@@ -355,6 +355,17 @@
     background: transparent;
     margin-top: 2rem
   }
+  .modal-content{
+    height: 26rem;
+    width: 100%;
+  }
+  #infohead{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  #infopara{
+    font-size: small;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -362,12 +373,20 @@
     background: transparent;
     margin-top: 2rem
   }
+  .modal-content{
+    height: 26rem;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
   .gradient-form {
     background: transparent;
     margin-top: 4rem
+  }
+  .modal-content{
+    height: 26rem;
+    width: 100%;
   }
 }
 

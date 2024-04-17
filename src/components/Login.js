@@ -230,7 +230,7 @@ const Login = () => {
         >
           <div
             className="modal-content d-flex flex-row justify-content-center align-items-center"
-            style={{ height: "26rem", width: "100%" }}
+            
           >
             <div
               className="modal-header"
@@ -251,8 +251,8 @@ const Login = () => {
                   <i class="fa-solid fa-info" style={{ color: "#ffffff", fontSize: "5rem" }}></i>
                 </div>
 
-                <h1>Important Note!</h1>
-                <p>As i am on a free hosting plan, the server may temporarily spin down after 15 minutes of inactivity. It might take a few seconds to become active again. Please be patient for the initial load, subsequent interactions will be smooth.</p>
+                <h1 id="infohead">Important Note!</h1>
+                <p id="infopara">As i am on a free hosting plan, the server may temporarily spin down after 15 minutes of inactivity. It might take a few seconds to become active again. Please be patient for the initial load, subsequent interactions will be smooth.</p>
               </div>
               <div className="closer" style={{display:"flex",height:'100%',justifyContent:'flex-start',width:'0rem'}}>
                 <button
