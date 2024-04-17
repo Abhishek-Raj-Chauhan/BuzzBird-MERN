@@ -92,7 +92,7 @@ const Signup = () => {
   };
   const verifyEmail = async () => {
     let dataSend = {
-      otpe: otpe,
+      otp: otpe,
     };
 
     const res = await fetch(`${baseUrl}/email/verifyEmail`, {
