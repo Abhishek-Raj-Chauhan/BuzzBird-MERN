@@ -23,6 +23,9 @@ const Signup = () => {
   const tex2 = useRef(null);
   const tex3 = useRef(null);
   const tex4 = useRef(null);
+  const pr1 = '';
+  const pr2 = 'none';
+  const pr3 = 'none';
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
@@ -82,13 +85,12 @@ const Signup = () => {
         "Content-Type": "application/json",
       },
     })
-      // HANDLING ERRORS
-      .then((res) => {
-        console.log(res);
-        if (res.status > 199 && res.status < 300) {
-          alert("Send Successfully !");
-        }
-      });
+    const json = await res.json();
+    if(json.success){
+      pr1 = 'none';
+      pr2 = '';
+      console.log('Email sent successfully');
+    }
   };
   const verifyEmail = async () => {
     let dataSend = {
@@ -105,6 +107,8 @@ const Signup = () => {
     })
     const json = await res.json();
     if(json.success){
+      pr2='none';
+      pr3='';
       console.log('otp verification successfull');
     }
   };
@@ -436,14 +440,14 @@ const Signup = () => {
                           </div>
                           <div className="text-center pt-1 mb-5 pb-1">
                             <button
-                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr3}`}
                               type="submit"
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                             >
                               Register
                             </button>
                             <button
-                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr2}`}
                               type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={sendEmail}
                             >
@@ -451,7 +455,7 @@ const Signup = () => {
                             </button>
                             
                             <button
-                              className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr1}`}
                               type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={verifyEmail}
                             >

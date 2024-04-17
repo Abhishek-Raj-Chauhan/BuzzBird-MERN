@@ -8,7 +8,6 @@ const verifyEmail = expressAsyncHandler(async (req, res) => {
   console.log(otp);
   try {
     // Find OTP entry in the database
-    let success=false;
     const otpEntry = await Otp.findOne({ otp: otp });
     if (otpEntry) {
       // OTP is valid

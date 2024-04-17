@@ -39,9 +39,9 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
+      res.status(400).json({ success: false, message: "Error Sending email" });
     } else {
-      console.log("Email sent successfully!");
+      res.status(200).json({ success: true, message: "Email sent successfully" });
     }
   });
 });
