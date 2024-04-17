@@ -203,8 +203,8 @@ const Signup = () => {
       </div>
       <div className="background">
         <section className="gradient-form">
-          <div className="container py-5 h-100">
-            <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="container py-5">
+            <div className="row d-flex justify-content-center align-items-center" id="rower">
               <div className="col-xl-10">
                 <div
                   className="car rounded-3 text-black"

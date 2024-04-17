@@ -448,6 +448,9 @@
     font-size: 5rem;
     color: #ffffff;
   }
+  #rower{
+    margin-top: 2rem;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -469,5 +472,9 @@
     color: #ffffff;
     font-size: 5rem;
   }
+  #rower{
+    margin-top: 2rem;
+  }
+
 }
 
