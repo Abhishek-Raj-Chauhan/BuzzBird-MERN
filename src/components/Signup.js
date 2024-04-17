@@ -89,6 +89,10 @@ const Signup = () => {
     if(json.success){
       pr1 = 'none';
       pr2 = '';
+      if (tex.current) tex.current.textContent = "Email sent Successfully";
+      if (tex2.current)
+        tex2.current.textContent = "The window will close automatically";
+      updateNote(ref, cref, 1000);
       console.log('Email sent successfully');
     }
   };
@@ -109,6 +113,10 @@ const Signup = () => {
     if(json.success){
       pr2='none';
       pr3='';
+      if (tex.current) tex.current.textContent = "Email Verification Successfull";
+      if (tex2.current)
+        tex2.current.textContent = "The window will close automatically";
+      updateNote(ref, cref, 1000);
       console.log('otp verification successfull');
     }
   };
@@ -447,7 +455,7 @@ const Signup = () => {
                               Register
                             </button>
                             <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr2}`}
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr1}`}
                               type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={sendEmail}
                             >
@@ -455,7 +463,7 @@ const Signup = () => {
                             </button>
                             
                             <button
-                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr1}`}
+                              className={`btn btn-primary btn-block fa-lg gradient-custom-2 mx-3 d-${pr2}`}
                               type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }} onClick={verifyEmail}
                             >
