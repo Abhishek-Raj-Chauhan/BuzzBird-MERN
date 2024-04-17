@@ -31,7 +31,7 @@ const Login = () => {
     localStorage.removeItem("token");
     clearTimeout(timeoutRef.current);
     // Redirect to login page or any other desired action after logout
-    history.push("/login");
+    history.push("/");
   };
 
   const setLogoutTimer = () => {
