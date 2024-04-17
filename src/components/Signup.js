@@ -414,7 +414,7 @@ const Signup = () => {
                             </button>
                             <button
                               className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
-                              type="submit"
+                              type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                               onClick={sendOTP}
                             >
@@ -422,7 +422,7 @@ const Signup = () => {
                             </button>
                             <button
                               className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3"
-                              type="submit"
+                              type="button"
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                               onClick={verifyOTP}
                             >
