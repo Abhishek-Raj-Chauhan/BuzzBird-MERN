@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
 const Login = () => {
-
+  let history = useHistory();
   useEffect(() => {
     if (localStorage.getItem("token")) {
       history.push("/home");
@@ -49,7 +49,7 @@ const Login = () => {
       cref.current.click();
     }, time);
   };
-  let history = useHistory();
+  
   const [redirect, setredirect] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("state")) {
