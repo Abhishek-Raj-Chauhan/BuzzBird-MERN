@@ -155,8 +155,8 @@ const Login = () => {
                   ></i>
                 </div>
 
-                <h2 className="infohead" ref={tex}>Success</h2>
-                <p className="infopara" ref={tex2}></p>
+                <h2 ref={tex}>Success</h2>
+                <p ref={tex2}></p>
               </div>
               <button
                 type="button"
@@ -220,8 +220,8 @@ const Login = () => {
                   ></i>
                 </div>
 
-                <h1 className="infohead">Login Failed</h1>
-                <p className="infopara">Please check your email or password and try again</p>
+                <h1>Login Failed</h1>
+                <p>Please check your email or password and try again</p>
               </div>
               <button
                 type="button"

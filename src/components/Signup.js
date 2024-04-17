@@ -112,8 +112,8 @@ const Signup = () => {
                   ></i>
                 </div>
 
-                <h1 className="infohead" ref={tex}>Success</h1>
-                <p className="infopara" ref={tex2}></p>
+                <h1 ref={tex}>Success</h1>
+                <p ref={tex2}></p>
               </div>
               <button
                 type="button"
@@ -172,8 +172,8 @@ const Signup = () => {
                   ></i>
                 </div>
 
-                <h1 className="infohead" ref={tex3}>Error</h1>
-                <p className="infopara" ref={tex4}></p>
+                <h1 ref={tex3}>Error</h1>
+                <p ref={tex4}></p>
               </div>
               <button
                 type="button"

@@ -390,12 +390,12 @@
   .infopara{
     font-size: 0.9rem;
   }
-  #iyer2{
+  #iyer2, #iyer4, #iyer6, #iyer8, #iyer10{
     height: 7rem;
     width: 7rem;
     margin-bottom: 2rem;
   }
-  #iyer{
+  #iyer, #iyer3, #iyer5, #iyer7, #iyer9{
     font-size: 4rem;
     color: #ffffff;
   }
@@ -418,12 +418,12 @@
   .infopara{
     font-size: 1rem;
   }
-  #iyer2{
+  #iyer2, #iyer4, #iyer6, #iyer8, #iyer10{
     height: 7rem;
     width: 7rem;
     margin-bottom: 2rem;
   }
-  #iyer{
+  #iyer, #iyer3, #iyer5, #iyer7, #iyer9{
     font-size: 4rem;
     color: #ffffff;
   }
