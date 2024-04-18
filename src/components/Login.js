@@ -190,6 +190,7 @@ const Login = () => {
         if (tex2.current)
           tex2.current.textContent = "The window will close automatically";
         localStorage.setItem("token", json.authToken);
+        localStorage.setItem("logtime", json.currentTime);
         updateNote(ref, cref, 1000);
         setredirect(true);
       } else {
