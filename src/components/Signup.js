@@ -34,9 +34,9 @@ const Signup = () => {
     }, time);
   };
   const handlesignUp = async (e) => {
-    setIsLoading(true); 
-    const { name, email, password } = credentials;
     e.preventDefault();
+    setIsLoading(true); 
+    const { name, email, password } = credentials;  
     const response = await fetch(
       `https://cozynotes-mern.onrender.com/api/auth/createuser`,
       {
