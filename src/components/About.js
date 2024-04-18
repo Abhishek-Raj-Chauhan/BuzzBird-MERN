@@ -2,7 +2,12 @@ import React from "react";
 import "../App.css";
 
 const About = () => {
-
+  if (document.getElementById("navBar"))
+    document.getElementById("navBar").style.background = `${
+      window.innerWidth < 991
+        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
+        : "transparent"
+    }`;
   return (
     <>
       <div class="background">

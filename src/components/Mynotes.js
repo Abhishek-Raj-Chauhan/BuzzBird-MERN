@@ -6,6 +6,12 @@ import Mynoteitem from "./Mynoteitem";
 import Spinner from "./Spinner";
 import Alert from "./Alert";
 const Mynotes = (props) => {
+  if (document.getElementById("navBar"))
+    document.getElementById("navBar").style.background = `${
+      window.innerWidth < 991
+        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
+        : "transparent"
+    }`;
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
