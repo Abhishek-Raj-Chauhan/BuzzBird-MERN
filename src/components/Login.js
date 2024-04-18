@@ -2,8 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
+import Spinner from "./Spinner";
 const Login = () => {
   let history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       history.push("/home");
@@ -66,6 +68,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); 
     const response = await fetch(
       `https://cozynotes-mern.onrender.com/api/auth/login`,
       {
@@ -82,6 +85,7 @@ const Login = () => {
     );
 
     const json = await response.json();
+    setIsLoading(false); 
     if (json.success) {
       //save the auth token and redirect
       localStorage.setItem("token", json.authToken);
@@ -304,6 +308,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      {isLoading && <Spinner/>}
       <div className="background">
         <section className="gradient-form">
           <div
