@@ -21,25 +21,6 @@ function Chats(props) {
     setChat({ ...chat, [event.target.name]: event.target.value });
   };
 
-  const handleScroll = () => {
-    const { scrollTop } = chatListRef.current;
-    if (scrollTop === 0) {
-      // User has scrolled to the top, fetch more chats
-      fetchMoreChats();
-    }
-  };
-
-  const fetchMoreChats = () => {
-    // Implement logic to fetch more chats here
-    // Set loading state while fetching
-    setLoading(true);
-    // Simulate loading for 1 second
-    setTimeout(() => {
-      // Fetch more chats
-      setLoading(false);
-    }, 1000);
-  };
-
   useEffect(() => {
     if (localStorage.getItem("token")) {
       fetchAllChats();
@@ -48,11 +29,6 @@ function Chats(props) {
     }
   }, [fetchAllChats, history]);
 
-  useEffect(() => {
-    // Add scroll event listener to chat list container
-    chatListRef.current.addEventListener("scroll", handleScroll);
-    // eslint-disable-next-line
-  }, []);
   return (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
       <h3 style={{ padding: "4rem 0rem 1rem 1rem" }}>Community Chats: </h3>
