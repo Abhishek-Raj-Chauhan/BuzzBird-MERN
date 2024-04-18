@@ -80,7 +80,7 @@ const Signup = () => {
     let dataSend = {
       email: credentials.email,
     };
-
+    setIsLoading(true); 
     const res = await fetch(`${baseUrl}/email/sendEmail`, {
       method: "POST",
       body: JSON.stringify(dataSend),
@@ -90,6 +90,7 @@ const Signup = () => {
       },
     });
     const json = await res.json();
+    setIsLoading(false); 
     if (json.success) {
       setesend(true);
       if (tex.current) tex.current.textContent = "Email sent Successfully";
@@ -103,7 +104,7 @@ const Signup = () => {
     let dataSend = {
       otp: otpe,
     };
-
+    setIsLoading(true); 
     const res = await fetch(`${baseUrl}/email/verifyEmail`, {
       method: "POST",
       body: JSON.stringify(dataSend),
@@ -113,6 +114,7 @@ const Signup = () => {
       },
     });
     const json = await res.json();
+    setIsLoading(false); 
     if (json.success) {
       seteverify("true");
       if (tex.current) tex.current.textContent = "Verification Successful";
