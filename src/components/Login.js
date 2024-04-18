@@ -46,8 +46,12 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
+  // Check if the page is being reloaded
+  if (window.performance.getEntriesByType('navigation').length > 0) {
+    // Execute ref3.current.click() only once when the component mounts
     ref3.current.click();
-  });
+  }
+}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
