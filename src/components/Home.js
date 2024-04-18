@@ -11,7 +11,6 @@ const Home = (props) => {
     }`;
   return (
     <>
-      <Navbar/>
       <div
         className="wrapper"
         style={{
@@ -23,6 +22,7 @@ const Home = (props) => {
           background: "linear-gradient(to right, #833ab4, #2720a1, #121120)",
         }}
       >
+        <Navbar/>
         <Notes toggle={props.toggle} />
         {window.innerWidth > 600 ? (
           <AddNote toggle={props.toggle} alerter={props.alerter} />
