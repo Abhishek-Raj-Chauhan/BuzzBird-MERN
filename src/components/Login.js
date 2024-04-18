@@ -4,6 +4,12 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
 import Spinner from "./Spinner";
 const Login = () => {
+  if (document.getElementById("navBar"))
+    document.getElementById("navBar").style.background = `${
+      window.innerWidth < 991
+        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
+        : "transparent"
+    }`;
   let history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
