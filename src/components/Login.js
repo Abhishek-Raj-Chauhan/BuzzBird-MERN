@@ -121,7 +121,7 @@ const Login = () => {
       email: credentials.email,
     };
     setIsLoading(true); 
-    const res = await fetch(`${baseUrl}/email/sendEmail`, {
+    const res = await fetch(`https://cozynotes-mern.onrender.com/email/sendEmail`, {
       method: "POST",
       body: JSON.stringify(dataSend),
       headers: {
@@ -146,7 +146,7 @@ const Login = () => {
       otp: otpe,
     };
     setIsLoading(true); 
-    const res = await fetch(`${baseUrl}/email/verifyEmail`, {
+    const res = await fetch(`https://cozynotes-mern.onrender.com/email/verifyEmail`, {
       method: "POST",
       body: JSON.stringify(dataSend),
       headers: {
@@ -168,17 +168,17 @@ const Login = () => {
   const handleforGotPass3 = async (e) => {
     e.preventDefault();
     setIsLoading(true); 
-    const { password , cpassword} = credentials;  
+    const { email, password , cpassword} = credentials;  
     if(password===cpassword){
       const response = await fetch(
-        `https://cozynotes-mern.onrender.com/api/auth/createuser`,
+        `https://cozynotes-mern.onrender.com/api/auth/updateUser`,
         {
-          method: "POST",
+          method: "PUT",
           credentials: "same-origin",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ password }),
+          body: JSON.stringify({ email, password }),
         }
       );
   
@@ -687,6 +687,17 @@ const Login = () => {
                               onClick={handleforGotPass2}
                             >
                               Verify OTP
+                            </button>
+                          </div>
+                          }
+                          {
+                            esend && everify && <div className="text-center pt-1 mb-5 pb-1">
+                            <button
+                              className="btn text-white fa-lg gradient-custom-2 mx-3"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }}
+                              onClick={handleforGotPass3}
+                            >
+                              Reset Password
                             </button>
                           </div>
                           }
