@@ -7,6 +7,7 @@ function Notes(props) {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
+  const [loading, setLoading] = useState(false); // Add loading state
   const isRef2Clicked = localStorage.getItem("isRef2Clicked");
   useEffect(() => {
     const fetchData = async () => {
