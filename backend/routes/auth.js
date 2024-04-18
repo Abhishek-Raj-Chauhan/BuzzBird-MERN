@@ -136,7 +136,7 @@ router.post("/getUser", fetchUser, async (req, res) => {
 });
 
 //4. Update User
-router.put("/updateUser/",
+router.put("/updateUser",
   [
     //Validation provided using express validator
     body("email", "Please enter a valid email").isEmail(),
@@ -167,6 +167,11 @@ router.put("/updateUser/",
       // Update the user's password
       user.password = hashedPassword;
       await user.save();
+      const data = {
+        userId: {
+          id: user.id,
+        },
+      };
       const authToken = jwt.sign(data, JWT_SECRET);
       const currentTime = new Date().toISOString(); // Get current time in ISO format
       // Return success response

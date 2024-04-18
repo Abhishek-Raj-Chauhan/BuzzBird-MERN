@@ -482,7 +482,7 @@ const Login = () => {
                               }`,
                             }}
                           >
-                            <strong>{forgot ? `Login to your account`:`Enter new password`}</strong>
+                            <strong>{forgot ? `Login to your account`:`Enter new credentials`}</strong>
                           </p>
 
                           <div
