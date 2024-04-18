@@ -203,6 +203,7 @@ const Login = () => {
       }
     }
     else{
+      setIsLoading(false); 
       if (tex3.current) tex3.current.textContent = "Password Mismatch";
         if (tex4.current)
           tex4.current.textContent = "Please enter same confirm password";
@@ -468,7 +469,7 @@ const Login = () => {
                             alt="logo"
                           />
                           <h3 className="mt-1 mb-5 pb-1 text-black">
-                            <strong>Log In</strong>
+                            <strong>{forgot ? `Log In`:`Reset Password`}</strong>
                           </h3>
                         </div>
 
@@ -481,7 +482,7 @@ const Login = () => {
                               }`,
                             }}
                           >
-                            <strong>Login to your account</strong>
+                            <strong>{forgot ? `Login to your account`:`Enter new password`}</strong>
                           </p>
 
                           <div
