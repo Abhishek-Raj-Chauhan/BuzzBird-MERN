@@ -1,14 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import loading from "./loading.gif";
 
-export default class Spinner extends Component {
-  render() {
-    return (
-      <div className="text-center" style={{width:'100%',minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',position:'sticky',zIndex:'5'}}>
-        <img src={loading} alt="loading" style={{width:'200px'}}/>
-        <br />
-        <p className="tex" style={{color:'white'}}>whooosh you've reached the end..</p>
-      </div>
-    );
-  }
-}
+const Spinner = () => {
+  return (
+    <div
+      className="text-center"
+      style={{
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        zIndex: "9999", // Ensure the spinner appears on top of everything
+      }}
+    >
+      <img src={loading} alt="loading" style={{ width: "200px" }} />
+      <br />
+      <p className="tex" style={{ color: "white" }}>
+        whooosh you've reached the end..
+      </p>
+    </div>
+  );
+};
+
+export default Spinner;
