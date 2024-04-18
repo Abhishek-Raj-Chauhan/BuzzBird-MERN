@@ -5,11 +5,11 @@ const NoteImgState = (props) => {
   // eslint-disable-next-line
   const [currentImageIndex, setCurrentImageIndex] = useState(-1); // Initializing with -1 to indicate no previous image
   const imageUrls = [
-    "https://plus.unsplash.com/premium_photo-1709901916808-19de9683437e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1708649290066-5f617003b93f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D",
 
     "https://images.unsplash.com/photo-1711139279274-ddff5036591a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8",
 
-    "https://images.unsplash.com/photo-1708649290066-5f617003b93f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1709901916808-19de9683437e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D",
 
     "https://images.unsplash.com/photo-1711117479067-584465e4466a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D",
 

@@ -7,13 +7,39 @@ function Notes(props) {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
+  const isRef2Clicked = localStorage.getItem("isRef2Clicked");
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (!isRef2Clicked && window.performance.getEntriesByType('navigation').length > 0) {
+          setLoading(true); // Set loading to true before fetching notes
+          localStorage.setItem("isRef2Clicked", "true");
+        }
+        await fetchAllNotes();
+      } catch (error) {
+        console.error("Error fetching notes:", error);
+      } finally {
+        setLoading(false); // Set loading to false after fetching notes (regardless of success or error)
+      }
+    };
     if (localStorage.getItem("token")) {
-      fetchAllNotes();
+      fetchData();
     } else {
       history.push("/");
     }
-  }, [fetchAllNotes, history]);
+    // Cleanup function to remove isRef3Clicked from localStorage before page reload
+    const cleanupBeforeUnload = () => {
+      localStorage.removeItem("isRef2Clicked");
+    };
+  
+    // Listen to beforeunload event for cleanup
+    window.addEventListener("beforeunload", cleanupBeforeUnload);
+  
+    // Cleanup listener when component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", cleanupBeforeUnload);
+    };
+  }, []);
   const ref = useRef(null);
   const refClose = useRef(null);
   const [note, setnote] = useState({
