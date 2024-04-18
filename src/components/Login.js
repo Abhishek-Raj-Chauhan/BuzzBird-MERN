@@ -73,7 +73,6 @@ const Login = () => {
       //save the auth token and redirect
       localStorage.setItem("token", json.authToken);
       localStorage.setItem("logtime", json.currentTime);
-      setLogoutTimer(); // Set the logout timer upon successful login
       if (tex.current) tex.current.textContent = "You're now Logged in";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
@@ -106,13 +105,8 @@ const Login = () => {
         localStorage.setItem("logtime",currentTime2);
       }
       
-    }, [timeoutRef, history]);
+    }, [history]);
 
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setLogoutTimer(); // Set the logout timer upon initial login
-    }
-  }, []);
 
   if (redirect === true) {
     setTimeout(() => {
