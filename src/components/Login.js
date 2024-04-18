@@ -308,7 +308,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Spinner/>
+      {isLoading && <Spinner/>}
       <div className="background">
         <section className="gradient-form">
           <div
