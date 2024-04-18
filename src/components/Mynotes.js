@@ -9,10 +9,9 @@ const Mynotes = (props) => {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(true); // Add loading state
   useEffect(() => {
     console.log("Fetching notes...");
-    setLoading(true);
     const fetchData = async () => {
       try {
         await fetchAllNotes();
