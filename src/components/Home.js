@@ -1,14 +1,11 @@
 import React from "react";
 import Notes from "./Notes";
 import AddNote from "./AddNote";
-import Navbar from "../components/Navbar";
+
 const Home = (props) => {
   if (document.getElementById("navBar"))
-    document.getElementById("navBar").style.background = `${
-      window.innerWidth < 991
-        ? "linear-gradient(to right, #833ab4 , #2720a1,#121120 )"
-        : "transparent"
-    }`;
+    document.getElementById("navBar").style.background =
+      "linear-gradient(to right, #833ab4, #2720a1, #121120)";
   return (
     <>
       <div
@@ -22,7 +19,6 @@ const Home = (props) => {
           background: "linear-gradient(to right, #833ab4, #2720a1, #121120)",
         }}
       >
-        <Navbar/>
         <Notes toggle={props.toggle} />
         {window.innerWidth > 600 ? (
           <AddNote toggle={props.toggle} alerter={props.alerter} />
