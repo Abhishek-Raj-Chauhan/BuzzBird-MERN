@@ -1,7 +1,7 @@
 import React from "react";
 import Notes from "./Notes";
 import AddNote from "./AddNote";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 const Home = (props) => {
   if (document.getElementById("navBar"))
     document.getElementById("navBar").style.background = `${
