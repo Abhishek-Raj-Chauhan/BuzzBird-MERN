@@ -12,12 +12,21 @@ const Mynotes = (props) => {
   const [loading, setLoading] = useState(false); // Add loading state
   useEffect(() => {
     setLoading(true);
+    const fetchData = async () => {
+      try {
+        await fetchAllNotes();
+      } catch (error) {
+        // Handle error if needed
+        console.error("Error fetching notes:", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or error
+      }
+    };
+  
     if (localStorage.getItem("token")) {
-      fetchAllNotes();
-      setLoading(false);
+      fetchData();
     } else {
       history.push("/");
-      setLoading(false);
     }
   }, [fetchAllNotes, history]);
   const ref = useRef(null);
