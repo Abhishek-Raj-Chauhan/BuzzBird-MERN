@@ -67,8 +67,8 @@ const Login = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     setIsLoading(true); 
+    e.preventDefault();
     const response = await fetch(
       `https://cozynotes-mern.onrender.com/api/auth/login`,
       {

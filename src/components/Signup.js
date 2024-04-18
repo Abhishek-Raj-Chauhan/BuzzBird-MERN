@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Logc.css";
+import Spinner from "./Spinner";
 const Signup = () => {
   const [credentials, setcredentials] = useState({
     name: "",
@@ -8,6 +9,7 @@ const Signup = () => {
     password: "",
     cpassword: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   const onchange = (event) => {
     setcredentials({ ...credentials, [event.target.name]: event.target.value });
   };
@@ -32,6 +34,7 @@ const Signup = () => {
     }, time);
   };
   const handlesignUp = async (e) => {
+    setIsLoading(true); 
     const { name, email, password } = credentials;
     e.preventDefault();
     const response = await fetch(
@@ -47,6 +50,7 @@ const Signup = () => {
     );
 
     const json = await response.json();
+    setIsLoading(false); 
     //save the auth token and redirect
     if (json.success) {
       if (tex.current) tex.current.textContent = "Account Created Successfully";
@@ -233,6 +237,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      {isLoading && <Spinner/>}
       <div className="background">
         <section className="gradient-form">
           <div
