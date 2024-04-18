@@ -43,19 +43,30 @@ const Login = () => {
       localStorage.clear();
     }
   }, []);
-  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    // Check if ref3.current.click() has already been executed
     const isRef3Clicked = localStorage.getItem("isRef3Clicked");
   
-    // If ref3.current.click() hasn't been executed yet and the page is being reloaded
+    // Check if ref3.current.click() has already been executed
     if (!isRef3Clicked && window.performance.getEntriesByType('navigation').length > 0) {
       // Execute ref3.current.click() only once when the component mounts
       ref3.current.click();
       // Set a flag in localStorage to indicate that ref3.current.click() has been executed
       localStorage.setItem("isRef3Clicked", "true");
     }
+  
+    // Cleanup function to remove isRef3Clicked from localStorage before page reload
+    const cleanupBeforeUnload = () => {
+      localStorage.removeItem("isRef3Clicked");
+    };
+  
+    // Listen to beforeunload event for cleanup
+    window.addEventListener("beforeunload", cleanupBeforeUnload);
+  
+    // Cleanup listener when component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", cleanupBeforeUnload);
+    };
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
