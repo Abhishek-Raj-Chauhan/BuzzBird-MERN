@@ -8,14 +8,14 @@ function Chats(props) {
   const context = useContext(noteContext);
   const { chats, fetchAllChats, addChat } = context;
   const [chat, setChat] = useState({ msg: "" });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const chatListRef = useRef(null);
   let history = useHistory();
   useEffect(() => {
     if (localStorage.getItem("token")) {
       fetchAllChats();
-      setLoading(true); // Set loading to true initially
+      setLoading(false); // Set loading to true initially
     } else {
       history.push("/");
     }
