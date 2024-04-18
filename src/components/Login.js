@@ -189,9 +189,9 @@ const Login = () => {
         if (tex.current) tex.current.textContent = "Password changed Successfully";
         if (tex2.current)
           tex2.current.textContent = "The window will close automatically";
+        updateNote(ref, cref, 1000);
         localStorage.setItem("token", json.authToken);
         localStorage.setItem("logtime", json.currentTime);
-        updateNote(ref, cref, 1000);
         setredirect(true);
       } else {
         setredirect(false);
