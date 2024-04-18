@@ -47,7 +47,7 @@ const Login = () => {
 
   useEffect(() => {
     ref3.current.click();
-  }, []);
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
