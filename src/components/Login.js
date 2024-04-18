@@ -43,9 +43,9 @@ const Login = () => {
       localStorage.clear();
     }
   }, []);
-
+const [isClicked, setIsClicked] = useState(false);
   useEffect(() => {
-    const [isClicked, setIsClicked] = useState(false);
+    
     // Check if the page is being reloaded
     if (!isClicked && window.performance.getEntriesByType('navigation').length > 0) {
       // Execute ref3.current.click() only once when the component mounts
