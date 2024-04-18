@@ -28,7 +28,7 @@ const Mynotes = (props) => {
     } else {
       history.push("/");
     }
-  }, [fetchAllNotes, history]);
+  }, []);
   const ref = useRef(null);
   const refClose = useRef(null);
   const [note, setnote] = useState({
