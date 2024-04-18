@@ -28,23 +28,6 @@ const Login = () => {
   const tex = useRef(null);
   const tex2 = useRef(null);
 
-  const timeoutRef = useRef(null);
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    clearTimeout(timeoutRef.current);
-    // Redirect to login page or any other desired action after logout
-    history.push("/");
-  };
-
-  const setLogoutTimer = () => {
-    // Clear any existing timeout
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    // Set new timeout for 15 minutes
-    timeoutRef.current = setTimeout(handleLogout, 6 * 60 * 1000); // 5 minutes in milliseconds
-  };
-
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
@@ -89,6 +72,7 @@ const Login = () => {
     if (json.success) {
       //save the auth token and redirect
       localStorage.setItem("token", json.authToken);
+      localStorage.setItem("logtime", json.currentTime);
       setLogoutTimer(); // Set the logout timer upon successful login
       if (tex.current) tex.current.textContent = "You're now Logged in";
       if (tex2.current)
@@ -100,6 +84,29 @@ const Login = () => {
       updateNote(ref2, cref2, 1200);
     }
   };
+
+    useEffect(() => {
+      const timeoutRef = localStorage.getItem("logtime");
+      const currentTime = new Date().toISOString();
+
+      const tenMinutesInMilliseconds = 10 * 60 * 1000; // 10 minutes in milliseconds
+
+      // Calculate the difference between current time and timeout reference time
+      const timeDifference = new Date(currentTime) - new Date(timeoutRef);
+
+      // Check if the time difference exceeds 10 minutes
+      if (timeDifference >= tenMinutesInMilliseconds) {
+        // Perform your action here, e.g., logout the user
+        localStorage.removeItem("logtime")
+        localStorage.removeItem("token");
+        // Redirect to login page or any other desired action after logout
+        history.push("/");
+      } else {
+        const currentTime2 = new Date().toISOString();
+        localStorage.setItem("logtime",currentTime2);
+      }
+      
+    }, [timeoutRef, history]);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {

@@ -84,7 +84,6 @@ router.post(
       let success=false;
       //Checking if the user with this email already exists or not
       let user = await User.findOne({ email });
-      
       if (!user) {
         success=false;
         return res
@@ -112,7 +111,8 @@ router.post(
       //jwt sign uses the user id and one secret key which is stored with us to generate an auth token
       const authToken = jwt.sign(data, JWT_SECRET);
       success=true;
-      res.json({ success, authToken });
+      const currentTime = new Date().toISOString(); // Get current time in ISO format
+      res.json({ success, authToken, currentTime});
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server error occured");
