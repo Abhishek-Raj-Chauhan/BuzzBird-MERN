@@ -9,13 +9,15 @@ const Mynotes = (props) => {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(false); // Add loading state
   useEffect(() => {
+    setLoading(true);
     if (localStorage.getItem("token")) {
       fetchAllNotes();
       setLoading(false);
     } else {
       history.push("/");
+      setLoading(false);
     }
   }, [fetchAllNotes, history]);
   const ref = useRef(null);
@@ -183,7 +185,7 @@ const Mynotes = (props) => {
           </div>
         </div>
       </div>
-      <Spinner/>
+      {loading && <Spinner/>}
       <div className="background">
         <div className="row" id="mynotesrow">
           <h3 style={{ zIndex: "2" }}>Your Notes: </h3>
