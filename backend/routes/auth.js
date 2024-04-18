@@ -135,37 +135,44 @@ router.post("/getUser", fetchUser, async (req, res) => {
 });
 
 //4. Update User
+router.put("/updateUser/",
+  [
+    //Validation provided using express validator
+    body("email", "Please enter a valid email").isEmail(),
+    body("password", "Password must be at least 5 characters").isLength({
+      min: 5,
+    }),
+  ], async (req, res) => {
+    try {
+      const { email, password } = req.body;
 
-router.put("/updateUser/", async (req, res) => {
-  try {
-    const { email, password } = req.body;
+      // If there are errors in validation, return bad request and the errors
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ success: false, errors: errors.array() });
+      }
 
-    // Validate the request data
-    if (!email || !password) {
-      return res.status(400).json({ error: "Email and password are required" });
+      // Check if a user with the specified email exists
+      let user = await User.findOne({ email });
+
+      if (!user) {
+        return res.status(404).json({ success: false, error: "User not found" });
+      }
+
+      // Hash the new password
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+
+      // Update the user's password
+      user.password = hashedPassword;
+      await user.save();
+
+      // Return success response
+      res.json({ success: true, user });
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Internal Server error occurred");
     }
-
-    // Check if a user with the specified email exists
-    let user = await User.findOne({ email });
-
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
-
-    // Hash the new password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    // Update the user's password
-    user.password = hashedPassword;
-    await user.save();
-
-    // Return success response
-    res.json({ success: true, user });
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Internal Server error occurred");
-  }
-});
+  });
 
 module.exports = router;
