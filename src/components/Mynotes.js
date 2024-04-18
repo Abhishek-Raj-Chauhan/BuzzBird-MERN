@@ -3,14 +3,17 @@ import { useState, useContext, useEffect, useRef } from "react";
 import noteContext from "../context/notes/noteContext";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Mynoteitem from "./Mynoteitem";
+import Spinner from "./Spinner";
 import Alert from "./Alert";
 const Mynotes = (props) => {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
+  const [loading, setLoading] = useState(true); // Add loading state
   useEffect(() => {
     if (localStorage.getItem("token")) {
       fetchAllNotes();
+      setLoading(false);
     } else {
       history.push("/");
     }
@@ -180,6 +183,7 @@ const Mynotes = (props) => {
           </div>
         </div>
       </div>
+      {loading && <Spinner/>}
       <div className="background">
         <div className="row" id="mynotesrow">
           <h3 style={{ zIndex: "2" }}>Your Notes: </h3>
