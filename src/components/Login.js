@@ -186,12 +186,12 @@ const Login = () => {
       setIsLoading(false); 
       //save the auth token and redirect
       if (json.success) {
+        localStorage.setItem("token", json.authToken);
+        localStorage.setItem("logtime", json.currentTime);
         if (tex.current) tex.current.textContent = "Password changed Successfully";
         if (tex2.current)
           tex2.current.textContent = "The window will close automatically";
         updateNote(ref, cref, 1000);
-        localStorage.setItem("token", json.authToken);
-        localStorage.setItem("logtime", json.currentTime);
         setredirect(true);
       } else {
         setredirect(false);
