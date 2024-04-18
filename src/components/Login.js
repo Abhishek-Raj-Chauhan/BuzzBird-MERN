@@ -20,7 +20,7 @@ const Login = () => {
     }
   }, [history]);
 
-  const [credentials, setcredentials] = useState({ email: "", password: "" });
+  const [credentials, setcredentials] = useState({ email: "", password: "" , cpassword:""});
   const onchange = (event) => {
     setcredentials({ ...credentials, [event.target.name]: event.target.value });
   };
@@ -32,7 +32,13 @@ const Login = () => {
   const cref3 = useRef(null);
   const tex = useRef(null);
   const tex2 = useRef(null);
-
+  const tex3 = useRef(null);
+  const tex4 = useRef(null);
+  const [otpe, setotpe] = useState("");
+  const [esend, setesend] = useState(false);
+  const [everify, seteverify] = useState(false);
+  const [forgot, setforgot] = useState(true);
+  const [flager, setflager] = useState(false);
   const updateNote = (ref, cref, time) => {
     ref.current.click();
     setTimeout(() => {
@@ -108,6 +114,106 @@ const Login = () => {
       updateNote(ref2, cref2, 1200);
     }
   };
+  const handleforGotPass1 = async (e) => {
+    e.preventDefault();
+    setflager(true);
+    let dataSend = {
+      email: credentials.email,
+    };
+    setIsLoading(true); 
+    const res = await fetch(`${baseUrl}/email/sendEmail`, {
+      method: "POST",
+      body: JSON.stringify(dataSend),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await res.json();
+    setIsLoading(false); 
+    if (json.success) {
+      setforgot(false);
+      setesend(true);
+      if (tex.current) tex.current.textContent = "Otp sent Successfully";
+      if (tex2.current)
+        tex2.current.textContent = "The window will close automatically";
+      updateNote(ref, cref, 1000);
+    }
+  };
+  const handleforGotPass2 = async (e) => {
+    e.preventDefault();
+    let dataSend = {
+      otp: otpe,
+    };
+    setIsLoading(true); 
+    const res = await fetch(`${baseUrl}/email/verifyEmail`, {
+      method: "POST",
+      body: JSON.stringify(dataSend),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await res.json();
+    setIsLoading(false); 
+    if (json.success) {
+      seteverify("true");
+      if (tex.current) tex.current.textContent = "Verification Successful";
+      if (tex2.current)
+        tex2.current.textContent = "The window will close automatically";
+      updateNote(ref, cref, 1000);
+      console.log("otp verification successfull");
+    }
+  };
+  const handleforGotPass3 = async (e) => {
+    e.preventDefault();
+    setIsLoading(true); 
+    const { password , cpassword} = credentials;  
+    if(password===cpassword){
+      const response = await fetch(
+        `https://cozynotes-mern.onrender.com/api/auth/createuser`,
+        {
+          method: "POST",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ password }),
+        }
+      );
+  
+      const json = await response.json();
+      setIsLoading(false); 
+      //save the auth token and redirect
+      if (json.success) {
+        if (tex.current) tex.current.textContent = "Password changed Successfully";
+        if (tex2.current)
+          tex2.current.textContent = "The window will close automatically";
+        localStorage.setItem("token", json.authToken);
+        updateNote(ref, cref, 1000);
+        setredirect(true);
+      } else {
+        setredirect(false);
+        if (tex3.current) tex3.current.textContent = "Server Error";
+        if (tex4.current)
+          tex4.current.textContent = "Please try again after some time";
+        updateNote(ref2, cref2, 1500);
+        console.log(json);
+      }
+    }
+    else{
+      if (tex3.current) tex3.current.textContent = "Password Mismatch";
+        if (tex4.current)
+          tex4.current.textContent = "Please enter same confirm password";
+        updateNote(ref2, cref2, 1500);
+    }
+    
+  };
+  if (redirect === true) {
+    setTimeout(() => {
+      history.push("/home");
+    }, 1100);
+  }
 
     useEffect(() => {
       const timeoutRef = localStorage.getItem("logtime");
@@ -250,8 +356,8 @@ const Login = () => {
                   ></i>
                 </div>
 
-                <h1>Login Failed</h1>
-                <p>Please check your email or password and try again</p>
+                <h1 ref={tex3}>Login Failed</h1>
+                <p ref={tex4}>Please check your email or password and try again</p>
               </div>
               <button
                 type="button"
@@ -409,8 +515,8 @@ const Login = () => {
                               Your Email
                             </label>
                           </div>
-
-                          <div
+                          {
+                            !flager && <div
                             className="form-floating flex-fill mb-3"
                             id="floaterlog2"
                           >
@@ -442,8 +548,116 @@ const Login = () => {
                               Password
                             </label>
                           </div>
-
-                          <div className="text-center pt-1 mb-5 pb-1">
+                          }
+                          {esend && everify && (
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign3"
+                            >
+                              <input
+                                type="password"
+                                className="form-control"
+                                id="password2"
+                                name="password"
+                                value={credentials.password}
+                                minLength={5}
+                                required
+                                onChange={onchange}
+                                placeholder="Password"
+                                autoComplete="new-password"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="password"
+                              >
+                                Password
+                              </label>
+                            </div>
+                          )}
+                          {esend && everify && (
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign4"
+                            >
+                              <input
+                                type="password"
+                                className="form-control"
+                                id="cpassword"
+                                name="cpassword"
+                                value={credentials.cpassword}
+                                minLength={5}
+                                required
+                                onChange={onchange}
+                                placeholder="Password"
+                                autoComplete="new-password"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="password"
+                              >
+                                Confirm Password
+                              </label>
+                            </div>
+                          )}
+                          {esend && !everify && (
+                            <div
+                              className="form-floating flex-fill mb-3"
+                              id="floatersign4"
+                            >
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="otpe"
+                                name="otpe"
+                                value={otpe}
+                                minLength={5}
+                                required
+                                onChange={(e) => setotpe(e.target.value)}
+                                placeholder="OTP"
+                                style={{
+                                  width: `${
+                                    window.innerWidth < 1024 ? "90%" : "100%"
+                                  }`,
+                                }}
+                              />
+                              <label
+                                style={{
+                                  padding: `${
+                                    window.innerWidth < 1024
+                                      ? "1rem 2rem"
+                                      : "1rem 0.75rem"
+                                  }`,
+                                }}
+                                htmlFor="password"
+                              >
+                                Enter OTP you received
+                              </label>
+                            </div>
+                          )}
+                          {
+                            !flager && <div className="text-center pt-1 mb-5 pb-1">
                             <button
                               className="btn text-white fa-lg gradient-custom-2 mx-3"
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
@@ -451,11 +665,32 @@ const Login = () => {
                             >
                               Log in
                             </button>
-                            {/* <a className="text-muted" href="#!">
-                          Forgot password?
-                        </a> */}
                           </div>
-
+                          }
+                          
+                          {
+                            forgot && <div className="text-center pt-1 mb-5 pb-1">
+                            <button
+                              className="btn text-white fa-lg gradient-custom-2 mx-3"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }}
+                              onClick={handleforGotPass1}
+                            >
+                              Forgot Password
+                            </button>
+                          </div>
+                          }
+                          {
+                            esend && !everify && <div className="text-center pt-1 mb-5 pb-1">
+                            <button
+                              className="btn text-white fa-lg gradient-custom-2 mx-3"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }}
+                              onClick={handleforGotPass2}
+                            >
+                              Verify OTP
+                            </button>
+                          </div>
+                          }
+                          
                           <div className="d-flex align-items-center justify-content-center pb-4">
                             <p className="mb-0 me-2 text-black">
                               Don't have an account?
