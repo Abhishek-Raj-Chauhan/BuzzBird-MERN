@@ -12,7 +12,7 @@ const Spinner = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust opacity here
+          backgroundColor: "rgba(0, 0, 0, 0.7)", // Adjust opacity here
           zIndex: 9998, // Place the overlay beneath the spinner
         }}
       ></div>
@@ -28,10 +28,6 @@ const Spinner = () => {
         }}
       >
         <img src={loading} alt="loading" style={{ width: "200px" }} />
-        <br />
-        <p className="tex" style={{ color: "white" }}>
-          whooosh you've reached the end..
-        </p>
       </div>
     </div>
   );
