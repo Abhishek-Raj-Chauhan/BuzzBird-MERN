@@ -3,6 +3,7 @@ import { useState, useContext, useEffect, useRef } from "react";
 import noteContext from "../context/notes/noteContext";
 import NoteItem from "./NoteItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Spinner from "./Spinner";
 function Notes(props) {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
@@ -198,6 +199,7 @@ function Notes(props) {
           </div>
         </div>
       </div>
+      {loading && <Spinner/>}
       <div className="list-group rounded-0" id="editnote">
         <h3 style={{ padding: "1rem 0rem 1rem 1rem" }}>Your Notes: </h3>
         {notes
