@@ -670,17 +670,6 @@ const Login = () => {
                           }
                           
                           {
-                            forgot && <div className="text-center pt-1 mb-5 pb-1">
-                            <button
-                              className="btn text-white fa-lg gradient-custom-2 mx-3"
-                              style={{ padding: "1.2rem", borderRadius: "0px" }}
-                              onClick={handleforGotPass1}
-                            >
-                              Forgot Password
-                            </button>
-                          </div>
-                          }
-                          {
                             esend && !everify && <div className="text-center pt-1 mb-5 pb-1">
                             <button
                               className="btn text-white fa-lg gradient-custom-2 mx-3"
@@ -724,7 +713,8 @@ const Login = () => {
                     </div>
                     <div
                       className="col-lg-6 d-flex align-items-center gradient-custom-2"
-                      style={{ zIndex: "2" }}
+                      style={{ zIndex: "2" , flexDirection: 'column',
+                      justifyContent: 'space-around', alignItems:'center'}}
                     >
                       <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                         <h2 className="mb-4">It's so good to see you again</h2>
@@ -750,6 +740,17 @@ const Login = () => {
                           journey with <strong>CozyNotes</strong>.
                         </p>
                       </div>
+                      {
+                            forgot && <div className="text-center pt-1 mb-5 pb-1">
+                            <button
+                              className="btn text-white fa-lg gradient-custom-2 mx-3"
+                              style={{ padding: "1.2rem", borderRadius: "0px" }}
+                              onClick={handleforGotPass1}
+                            >
+                              Forgot Password
+                            </button>
+                          </div>
+                          }
                     </div>
                   </div>
                 </div>
