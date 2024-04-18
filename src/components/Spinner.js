@@ -13,11 +13,7 @@ const Spinner = () => {
         zIndex: "9999", // Ensure the spinner appears on top of everything
       }}
     >
-      <img src={loading} alt="loading" style={{ width: "200px" }} />
-      <br />
-      <p className="tex" style={{ color: "white" }}>
-        whooosh you've reached the end..
-      </p>
+      <img src={loading} alt="loading" style={{ width: "100px" }} />
     </div>
   );
 };
