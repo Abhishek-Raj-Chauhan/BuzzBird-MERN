@@ -13,7 +13,6 @@ const Login = () => {
       history.push("/");
     }
   }, [history]);
-  const [isClicked, setIsClicked] = useState(false);
 
   const [credentials, setcredentials] = useState({ email: "", password: "" });
   const onchange = (event) => {
@@ -46,13 +45,14 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
+    const [isClicked, setIsClicked] = useState(false);
     // Check if the page is being reloaded
     if (!isClicked && window.performance.getEntriesByType('navigation').length > 0) {
       // Execute ref3.current.click() only once when the component mounts
       ref3.current.click();
       setIsClicked(true);
     }
-  }, [isClicked]);
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true); 
