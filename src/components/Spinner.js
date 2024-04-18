@@ -27,7 +27,7 @@ const Spinner = () => {
           zIndex: 9999, // Ensure the spinner appears on top of the overlay
         }}
       >
-        <img src={loading} alt="loading" style={{ width: "200px" }} />
+        <img src={loading} alt="loading" style={{ width: "150px" }} />
       </div>
     </div>
   );
