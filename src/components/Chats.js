@@ -15,7 +15,7 @@ function Chats(props) {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       fetchAllChats();
-      setLoading(false); // Set loading to true initially
+      setLoading(false);
     } else {
       history.push("/");
     }
@@ -59,7 +59,7 @@ function Chats(props) {
 
   return (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-      {loading && <Spinner />}
+      <Spinner />
       <h3 style={{ padding: "4rem 0rem 1rem 1rem" }}>Community Chats: </h3>
       <div ref={chatListRef} className="list-group rounded-0" id="editchat">
         {chats
@@ -68,7 +68,6 @@ function Chats(props) {
           .map((chat) => (
             <ChatItem key={chat._id} chat={chat} />
           ))}
-        {loading && <div>Loading more chats...</div>}
       </div>
       <div className="texter">
         <form

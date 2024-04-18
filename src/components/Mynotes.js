@@ -183,7 +183,7 @@ const Mynotes = (props) => {
           </div>
         </div>
       </div>
-      {loading && <Spinner/>}
+      <Spinner/>
       <div className="background">
         <div className="row" id="mynotesrow">
           <h3 style={{ zIndex: "2" }}>Your Notes: </h3>
