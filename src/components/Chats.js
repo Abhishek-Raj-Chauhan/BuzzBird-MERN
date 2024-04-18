@@ -4,22 +4,32 @@ import ChatItem from "./ChatItem";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "../App.css";
 import Spinner from "./Spinner";
+
 function Chats(props) {
   const context = useContext(noteContext);
   const { chats, fetchAllChats, addChat } = context;
   const [chat, setChat] = useState({ msg: "" });
-  const [loading, setLoading] = useState(true);
-  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false); // Initialize loading as false initially
+  const [hasMore, setHasMore] = useState(true); // Initialize hasMore appropriately
   const chatListRef = useRef(null);
   let history = useHistory();
+
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      fetchAllChats();
-      setLoading(false);
-    } else {
+    if (!localStorage.getItem("token")) {
       history.push("/");
     }
-  }, [fetchAllChats, history]);
+  }, [history]);
+
+  const fetchMoreChats = async () => {
+    setLoading(true); // Set loading to true when fetching more chats
+    try {
+      await fetchAllChats(); // Fetch more chats
+    } catch (error) {
+      console.error("Error fetching chats:", error); // Handle errors if any
+    } finally {
+      setLoading(false); // Set loading to false after chats are fetched
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,15 +47,9 @@ function Chats(props) {
     chatListRef.current.addEventListener("scroll", handleScroll);
 
     return () => {
-      chatListRef.current.removeEventListener("scroll", handleScroll);
+      chatListRef.current.removeEventListener("scroll", handleScroll); // Cleanup scroll event listener
     };
-  }, [fetchAllChats, hasMore]);
-
-  const fetchMoreChats = async () => {
-    setLoading(true); // Set loading to true when fetching more chats
-    await fetchAllChats(); // Fetch more chats
-    setLoading(false); // Set loading to false after chats are fetched
-  };
+  }, [hasMore]); // Listen for changes in hasMore state
 
   const handleAddChat = (event) => {
     event.preventDefault();
@@ -59,7 +63,7 @@ function Chats(props) {
 
   return (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-      <Spinner />
+      {loading && <Spinner />} {/* Render spinner while loading */}
       <h3 style={{ padding: "4rem 0rem 1rem 1rem" }}>Community Chats: </h3>
       <div ref={chatListRef} className="list-group rounded-0" id="editchat">
         {chats

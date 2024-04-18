@@ -9,17 +9,17 @@ const Mynotes = (props) => {
   const context = useContext(noteContext);
   const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(false); // Add loading state
   useEffect(() => {
-    console.log("Fetching notes...");
     const fetchData = async () => {
       try {
+        setLoading(true); // Set loading to true before fetching notes
         await fetchAllNotes();
         console.log("Notes fetched successfully!");
       } catch (error) {
         console.error("Error fetching notes:", error);
       } finally {
-        setLoading(false);
+        setLoading(false); // Set loading to false after fetching notes (regardless of success or error)
       }
     };
   
