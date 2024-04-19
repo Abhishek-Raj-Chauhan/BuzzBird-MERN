@@ -187,8 +187,6 @@ const Login = () => {
       setIsLoading(false); 
       //save the auth token and redirect
       if (json.success) {
-        localStorage.setItem("token", json.authToken);
-        localStorage.setItem("logtime", json.currentTime);
         if (tex.current) tex.current.textContent = "Password changed Successfully";
         if (tex2.current)
           tex2.current.textContent = "The window will close automatically";
@@ -219,13 +217,14 @@ const Login = () => {
   }
   if (redirect2 === true) {
     if (tex.current) tex.current.textContent = "Login Again";
-        if (tex2.current)
-          tex2.current.textContent = "With new Password";
-        updateNote(ref, cref, 1200);
+    if (tex2.current) tex2.current.textContent = "With new Password";
+    updateNote(ref, cref, 1200);
     setTimeout(() => {
-      history.push("/");
+        history.push("/");
+        window.location.reload();
     }, 500);
-  }
+}
+
 
     useEffect(() => {
       const timeoutRef = localStorage.getItem("logtime");
@@ -249,13 +248,6 @@ const Login = () => {
       }
       
     }, [history]);
-
-
-  if (redirect === true) {
-    setTimeout(() => {
-      history.push("/home");
-    }, 600);
-  }
 
   return (
     <>
