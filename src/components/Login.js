@@ -706,42 +706,26 @@ const Login = () => {
                           }
                           
                           </div>
-                          
-                          <div className="d-flex align-items-center justify-content-center pb-4">
-                            <p className="mb-0 me-2 text-black">
-                              Don't have an account?
-                            </p>
-                            {/* <button type="button" className=""> */}
-                            <Link
-                              to="/signup"
-                              className="btn btn-outline-danger"
-                            >
-                              Create new
-                            </Link>
-
-                            {/* </button> */}
-                          </div>
-                          <div className="d-flex align-items-center justify-content-center pb-4">
-                          {
-                            forgot && <>
+                          { forgot &&
+                          < div className="d-flex align-items-center justify-content-center pb-4">
                             <p className="mb-0 me-2 text-black">
                               Forgot Password?
                             </p>
                             <button
-                              className="btn btn-outline-primary"
+                              className="btn btn-outline-danger"
                               onClick={handleforGotPass1}
                             >
                               Forgot Password
                             </button>
-                          </>
-                          }
                           </div>
+                          }
                         </form>
                       </div>
                     </div>
                     <div
-                      className="col-lg-6 gradient-custom-2"
-                      style={{ zIndex: "2"}}
+                      className="col-lg-6 d-flex align-items-center gradient-custom-2"
+                      style={{ zIndex: "2" , flexDirection: 'column',
+                      justifyContent: 'space-around', alignItems:'center'}}
                     >
                       <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                         <h2 className="mb-4">It's so good to see you again</h2>
@@ -767,7 +751,20 @@ const Login = () => {
                           journey with <strong>CozyNotes</strong>.
                         </p>
                       </div>
-                      
+                      <div className="d-flex align-items-center justify-content-center pb-4">
+                            <p className="mb-0 me-2 text-black">
+                              Don't have an account?
+                            </p>
+                            {/* <button type="button" className=""> */}
+                            <Link
+                              to="/signup"
+                              className="btn gradient-custom-2"
+                            >
+                              Create new
+                            </Link>
+
+                            {/* </button> */}
+                      </div>
                     </div>
                   </div>
                 </div>
