@@ -729,7 +729,7 @@ const Login = () => {
                             </p>
                             <div className="text-center pt-1 mb-5 pb-1">
                             <button
-                              className="btn text-white fa-lg gradient-custom-2 mx-3"
+                              className="btn btn-outline-primary"
                               style={{ padding: "1.2rem", borderRadius: "0px" }}
                               onClick={handleforGotPass1}
                             >
