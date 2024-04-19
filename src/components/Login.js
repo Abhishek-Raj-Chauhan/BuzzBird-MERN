@@ -725,7 +725,7 @@ const Login = () => {
                     <div
                       className="col-lg-6 d-flex align-items-center gradient-custom-2"
                       style={{ zIndex: "2" , flexDirection: 'column',
-                      justifyContent: 'space-around', alignItems:'center'}}
+                      justifyContent: 'space-evenly', alignItems:'center'}}
                     >
                       <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                         <h2 className="mb-4">It's so good to see you again</h2>
