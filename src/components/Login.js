@@ -715,7 +715,7 @@ const Login = () => {
                               className="btn btn-outline-danger"
                               onClick={handleforGotPass1}
                             >
-                              Forgot Password
+                              Click here
                             </button>
                           </div>
                           }
