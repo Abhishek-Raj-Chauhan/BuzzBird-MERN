@@ -226,10 +226,7 @@ const Login = () => {
   }
   if (redirect2 === true) {
     if (tex.current) tex.current.textContent = "Password changed Successfully";
-    if (tex2.current) tex2.current.textContent = "The window will close automatically";
-    updateNote(ref, cref, 1500);
-    if (tex.current) tex.current.textContent = "Login Again";
-    if (tex2.current) tex2.current.textContent = "With new Password";
+    if (tex2.current) tex2.current.textContent = "You can login now";
     updateNote(ref, cref, 1800);
     setTimeout(() => {
         history.push("/");
