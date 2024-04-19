@@ -143,7 +143,7 @@ const Login = () => {
       }
     }
     else{
-      if (tex3.current) tex3.current.textContent = "Enter your email";
+      if (tex3.current) tex3.current.textContent = "Enter email";
       if (tex4.current) tex4.current.textContent = "Registered email should be entered";
       updateNote(ref2, cref2, 1500);
     }
