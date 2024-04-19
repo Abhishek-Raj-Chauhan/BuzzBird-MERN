@@ -47,6 +47,7 @@ const Login = () => {
   };
   
   const [redirect, setredirect] = useState(false);
+  const [redirect2, setredirect2] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("state")) {
       if (tex.current) tex.current.textContent = "LogOut Succesful";
@@ -192,9 +193,9 @@ const Login = () => {
         if (tex2.current)
           tex2.current.textContent = "The window will close automatically";
         updateNote(ref, cref, 1000);
-        setredirect(true);
+        setredirect2(true);
       } else {
-        setredirect(false);
+        setredirect2(false);
         if (tex3.current) tex3.current.textContent = "Server Error";
         if (tex4.current)
           tex4.current.textContent = "Please try again after some time";
@@ -215,6 +216,15 @@ const Login = () => {
     setTimeout(() => {
       history.push("/home");
     }, 1100);
+  }
+  if (redirect2 === true) {
+    if (tex.current) tex.current.textContent = "Login Again";
+        if (tex2.current)
+          tex2.current.textContent = "With new Password";
+        updateNote(ref, cref, 1200);
+    setTimeout(() => {
+      history.push("/");
+    }, 500);
   }
 
     useEffect(() => {
