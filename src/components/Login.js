@@ -752,13 +752,13 @@ const Login = () => {
                         </p>
                       </div>
                       <div className="d-flex align-items-center justify-content-center pb-4">
-                            <p className="mb-0 me-2 text-black">
+                            <p className="mb-0 me-2 text-light">
                               Don't have an account?
                             </p>
                             {/* <button type="button" className=""> */}
                             <Link
                               to="/signup"
-                              className="btn gradient-custom-2"
+                              className="btn btn-outline-light"
                             >
                               Create new
                             </Link>
