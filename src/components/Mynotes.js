@@ -48,7 +48,7 @@ const Mynotes = (props) => {
     return () => {
       window.removeEventListener("beforeunload", cleanupBeforeUnload);
     };
-  }, []);
+  }, [fetchAllNotes, history]);
   const ref = useRef(null);
   const refClose = useRef(null);
   const [note, setnote] = useState({
