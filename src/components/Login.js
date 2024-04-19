@@ -751,7 +751,7 @@ const Login = () => {
                           journey with <strong>CozyNotes</strong>.
                         </p>
                       </div>
-                      <div className="d-flex align-items-center justify-content-center pb-4">
+                      <div className="d-flex align-items-center justify-content-center pb-4" style={{padding: '0rem 1rem'}}>
                             <p className="mb-0 me-2 text-light">
                               Don't have an account?
                             </p>
