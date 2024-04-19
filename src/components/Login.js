@@ -167,11 +167,11 @@ const Login = () => {
     setIsLoading(false); 
     if (json.success) {
       seteverify("true");
+      credentials.password='';
       if (tex.current) tex.current.textContent = "Verification Successful";
       if (tex2.current)
         tex2.current.textContent = "The window will close automatically";
       updateNote(ref, cref, 1000);
-      console.log("otp verification successfull");
     }
     else{
       if (tex3.current) tex3.current.textContent = "Invalid OTP";
