@@ -144,7 +144,7 @@ const Login = () => {
     }
     else{
       if (tex3.current) tex3.current.textContent = "Enter email";
-      if (tex4.current) tex4.current.textContent = "Registered email should be entered";
+      if (tex4.current) tex4.current.textContent = "Please enter your registered email";
       updateNote(ref2, cref2, 1500);
     }
     
