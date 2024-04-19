@@ -174,7 +174,7 @@ const Navbar = (props) => {
                       id="login"
                       style={{
                         color: "black",
-                        borderRadius: "0px",
+                        borderRadius: "5px",
                         backgroundColor: "white",
                       }}
                       onClick={handleLinkClick}
@@ -188,7 +188,7 @@ const Navbar = (props) => {
                       id="signup"
                       style={{
                         color: "black",
-                        borderRadius: "0px",
+                        borderRadius: "5px",
                         backgroundColor: "white",
                       }}
                       onClick={handleLinkClick}
