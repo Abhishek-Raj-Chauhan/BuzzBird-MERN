@@ -118,28 +118,36 @@ const Login = () => {
   const handleforGotPass1 = async (e) => {
     e.preventDefault();
     setflager(true);
-    let dataSend = {
-      email: credentials.email,
-    };
-    setIsLoading(true); 
-    const res = await fetch(`https://cozynotes-mern.onrender.com/email/sendEmail`, {
-      method: "POST",
-      body: JSON.stringify(dataSend),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-    const json = await res.json();
-    setIsLoading(false); 
-    if (json.success) {
-      setforgot(false);
-      setesend(true);
-      if (tex.current) tex.current.textContent = "Otp sent Successfully";
-      if (tex2.current)
-        tex2.current.textContent = "The window will close automatically";
-      updateNote(ref, cref, 1000);
+    if(credentials.email!==''){
+      let dataSend = {
+        email: credentials.email,
+      };
+      setIsLoading(true); 
+      const res = await fetch(`https://cozynotes-mern.onrender.com/email/sendEmail`, {
+        method: "POST",
+        body: JSON.stringify(dataSend),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      const json = await res.json();
+      setIsLoading(false); 
+      if (json.success) {
+        setforgot(false);
+        setesend(true);
+        if (tex.current) tex.current.textContent = "Otp sent Successfully";
+        if (tex2.current)
+          tex2.current.textContent = "The window will close automatically";
+        updateNote(ref, cref, 1000);
+      }
     }
+    else{
+      if (tex3.current) tex3.current.textContent = "Enter your email";
+      if (tex4.current) tex4.current.textContent = "Registered email should be entered";
+      updateNote(ref2, cref2, 1500);
+    }
+    
   };
   const handleforGotPass2 = async (e) => {
     e.preventDefault();
@@ -164,6 +172,11 @@ const Login = () => {
         tex2.current.textContent = "The window will close automatically";
       updateNote(ref, cref, 1000);
       console.log("otp verification successfull");
+    }
+    else{
+      if (tex3.current) tex3.current.textContent = "Invalid OTP";
+      if (tex4.current) tex4.current.textContent = "Please check OTP sent to your email";
+      updateNote(ref2, cref2, 1500);
     }
   };
   const handleforGotPass3 = async (e) => {
@@ -213,16 +226,15 @@ const Login = () => {
   }
   if (redirect2 === true) {
     if (tex.current) tex.current.textContent = "Password changed Successfully";
-        if (tex2.current)
-          tex2.current.textContent = "The window will close automatically";
-        updateNote(ref, cref, 1000);
+    if (tex2.current) tex2.current.textContent = "The window will close automatically";
+    updateNote(ref, cref, 1500);
     if (tex.current) tex.current.textContent = "Login Again";
     if (tex2.current) tex2.current.textContent = "With new Password";
-    updateNote(ref, cref, 1500);
+    updateNote(ref, cref, 1800);
     setTimeout(() => {
         history.push("/");
         window.location.reload();
-    }, 500);
+    }, 2000);
 }
 
 
