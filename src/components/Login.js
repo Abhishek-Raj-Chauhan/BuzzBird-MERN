@@ -727,15 +727,12 @@ const Login = () => {
                             <p className="mb-0 me-2 text-black">
                               Forgot Password?
                             </p>
-                            <div className="text-center pt-1 mb-5 pb-1">
                             <button
                               className="btn btn-outline-primary"
-                              style={{ padding: "1.2rem", borderRadius: "0px" }}
                               onClick={handleforGotPass1}
                             >
                               Forgot Password
                             </button>
-                          </div>
                           </>
                           }
                           </div>
