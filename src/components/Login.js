@@ -187,10 +187,6 @@ const Login = () => {
       setIsLoading(false); 
       //save the auth token and redirect
       if (json.success) {
-        if (tex.current) tex.current.textContent = "Password changed Successfully";
-        if (tex2.current)
-          tex2.current.textContent = "The window will close automatically";
-        updateNote(ref, cref, 1000);
         setredirect2(true);
       } else {
         setredirect2(false);
@@ -216,9 +212,13 @@ const Login = () => {
     }, 1100);
   }
   if (redirect2 === true) {
+    if (tex.current) tex.current.textContent = "Password changed Successfully";
+        if (tex2.current)
+          tex2.current.textContent = "The window will close automatically";
+        updateNote(ref, cref, 1000);
     if (tex.current) tex.current.textContent = "Login Again";
     if (tex2.current) tex2.current.textContent = "With new Password";
-    updateNote(ref, cref, 1200);
+    updateNote(ref, cref, 1500);
     setTimeout(() => {
         history.push("/");
         window.location.reload();
