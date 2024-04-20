@@ -13,7 +13,7 @@ const Mynotes = (props) => {
         : "transparent"
     }`;
   const context = useContext(noteContext);
-  const { notes, fetchAllNotes, editNote } = context;
+  const { notes, fetchAllNotes, editNote, prevNote } = context;
   let history = useHistory();
   const [loading, setLoading] = useState(false); // Add loading state
   const isRef1Clicked = localStorage.getItem("isRef1Clicked");
