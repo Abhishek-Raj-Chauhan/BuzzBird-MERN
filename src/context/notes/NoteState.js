@@ -141,7 +141,6 @@ const NoteState = (props) => {
       description: currentNote.description,
       tag: currentNote.tag,
     });
-    console.log(note);
   };
   const prevy = () => {
     setnoteprev(true);
