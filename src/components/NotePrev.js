@@ -1,4 +1,4 @@
-import React from "react";
+import {useContext} from "react";
 import "./note.css";
 import noteContext from "../context/notes/noteContext";
 const NotePrev = (props) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import {useContext} from "react";
 import Notes from "./Notes";
 import AddNote from "./AddNote";
 import noteContext from "../context/notes/noteContext";
