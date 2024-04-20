@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Spinner from "./Spinner";
 function Notes(props) {
   const context = useContext(noteContext);
-  const { notes, fetchAllNotes, editNote } = context;
+  const { notes, fetchAllNotes, editNote, prevNote } = context;
   let history = useHistory();
   const [loading, setLoading] = useState(false); // Add loading state
   const isRef2Clicked = localStorage.getItem("isRef2Clicked");
@@ -68,6 +68,7 @@ function Notes(props) {
   };
   const onchange = (event) => {
     setnote({ ...note, [event.target.name]: event.target.value });
+    prevNote(note);
   };
 
   return (
