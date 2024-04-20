@@ -12,15 +12,16 @@ const NoteItem = (props) => {
   const handleMouseLeave = () => {
     setIsFlipped(false);
   };
+  useEffect(() => {
+    prevNote(note);
+  }, [note]);
   return (
     <div className="card rounded-0" id="ntitem">
       <div
         className="card-body"
         onClick={() => {
-          prevNote(note);
           prevy();
         }}
-        
       >
         <h5 className="card-title">
           {note.title.length > 28
