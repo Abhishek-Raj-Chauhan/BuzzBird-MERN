@@ -12,9 +12,6 @@ const NoteItem = (props) => {
   const handleMouseLeave = () => {
     setIsFlipped(false);
   };
-  useEffect(() => {
-    prevNote(note);
-  });
   return (
     <div className="card rounded-0" id="ntitem">
       <div
