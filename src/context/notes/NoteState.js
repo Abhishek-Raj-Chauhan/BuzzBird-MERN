@@ -8,6 +8,7 @@ const NoteState = (props) => {
   const chatsIni = [];
   const [notes, setnotes] = useState(notesIni);
   const [chats, setchats] = useState(chatsIni);
+  
   const fetchAllNotes = async () => {
     // API CALL
     const response = await fetch(`${host}/api/notes/fetchallNotes`, {
@@ -125,9 +126,27 @@ const NoteState = (props) => {
   };
   //Edit a note
   
+  const [noteprev, setnoteprev] = useState(false);
+  const [note, setnote] = useState({
+    id: "",
+    etitle: "",
+    edescription: "",
+    etag: "",
+  });
+
+  const prevNote = (currentNote) => {
+    setnoteprev(true);
+    setnote({
+      id: currentNote._id,
+      etitle: currentNote.title,
+      edescription: currentNote.description,
+      etag: currentNote.tag,
+    });
+  };
+
   return (
     <noteContext.Provider
-      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat}}
+      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat, noteprev, setnoteprev, note, prevNote}}
     >
       {props.children}
     </noteContext.Provider>
