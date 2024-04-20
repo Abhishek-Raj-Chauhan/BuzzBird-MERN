@@ -65,7 +65,7 @@ function Notes(props) {
     refClose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
     props.toggle("edit");
-    console.log(note);
+    prevNote(note);
   };
   const onchange = (event) => {
     setnote({ ...note, [event.target.name]: event.target.value });

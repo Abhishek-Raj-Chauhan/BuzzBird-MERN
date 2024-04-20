@@ -8,7 +8,7 @@ const NoteState = (props) => {
   const chatsIni = [];
   const [notes, setnotes] = useState(notesIni);
   const [chats, setchats] = useState(chatsIni);
-  
+
   const fetchAllNotes = async () => {
     // API CALL
     const response = await fetch(`${host}/api/notes/fetchallNotes`, {
@@ -43,7 +43,7 @@ const NoteState = (props) => {
         "Content-Type": "application/json",
         "auth-token": localStorage.getItem("token"),
       },
-      body: JSON.stringify({msg}),
+      body: JSON.stringify({ msg }),
     });
     const chat = await response.json();
     // setnotes(notes.push(note)) //Concat returns the array whearas push updates the array
@@ -125,7 +125,7 @@ const NoteState = (props) => {
     // setnotes(newNotes);
   };
   //Edit a note
-  
+
   const [noteprev, setnoteprev] = useState(false);
   const [note, setnote] = useState({
     id: "",
@@ -135,19 +135,33 @@ const NoteState = (props) => {
   });
 
   const prevNote = async (currentNote) => {
-    setnoteprev(true);
-    setnote({
-      id: currentNote._id,
-      title: currentNote.title,
-      description: currentNote.description,
-      tag: currentNote.tag,
-    });
-    console.log(note);
+    useEffect(() => {
+      setnoteprev(true);
+      setnote({
+        id: currentNote._id,
+        title: currentNote.title,
+        description: currentNote.description,
+        tag: currentNote.tag,
+      });
+    }, []);
   };
 
   return (
     <noteContext.Provider
-      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat, noteprev, setnoteprev, note, prevNote}}
+      value={{
+        notes,
+        addNote,
+        deleteNote,
+        editNote,
+        fetchAllNotes,
+        fetchAllChats,
+        chats,
+        addChat,
+        noteprev,
+        setnoteprev,
+        note,
+        prevNote,
+      }}
     >
       {props.children}
     </noteContext.Provider>
