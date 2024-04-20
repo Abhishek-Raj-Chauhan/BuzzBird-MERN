@@ -134,7 +134,7 @@ const NoteState = (props) => {
     tag: "",
   });
 
-  const prevNote = async (currentNote) => {
+  const prevNote = (currentNote) => {
     setnote({
       id: currentNote._id,
       title: currentNote.title,
@@ -143,7 +143,7 @@ const NoteState = (props) => {
     });
     console.log(note);
   };
-  const prevy = async () => {
+  const prevy = () => {
     setnoteprev(true);
   };
 
