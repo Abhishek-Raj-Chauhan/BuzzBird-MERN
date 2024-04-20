@@ -159,6 +159,23 @@
     height: 36%;
     background-color: transparent;
   }
+  #ntitem3{
+    padding: 3.2rem 0rem 0rem 0rem;
+    width: 75%;
+    overflow: auto;
+  }
+  #heady{
+    font-size: 3rem;
+    padding: 1rem;
+  }
+  #prevy{
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  #tagy{
+    font-size: 1.4rem;
+    padding: 1rem;
+  } 
   body {
     background: linear-gradient(to right, #833ab4, #2720a1, #121120);
     color: white;
@@ -323,6 +340,23 @@
     height: 36%;
     background-color: #000021;
   }
+  #ntitem3{
+    padding: 3.2rem 0rem 0rem 0rem;
+    width: 75%;
+    overflow: auto;
+  }
+  #heady{
+    font-size: 3rem;
+    padding: 1rem;
+  }
+  #prevy{
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  #tagy{
+    font-size: 1.4rem;
+    padding: 1rem;
+  } 
   body {
     background: linear-gradient(to right, #833ab4, #2720a1, #121120);
     color: white;
@@ -478,6 +512,24 @@
     height: 25%;
     background-color: #000021;
   }
+
+  #ntitem3{
+    padding: 3.2rem 0rem 0rem 0rem;
+    width: 75%;
+    overflow: auto;
+  }
+  #heady{
+    font-size: 3rem;
+    padding: 1rem;
+  }
+  #prevy{
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  #tagy{
+    font-size: 1.4rem;
+    padding: 1rem;
+  } 
   #mobileedit {
     display: none;
   }
