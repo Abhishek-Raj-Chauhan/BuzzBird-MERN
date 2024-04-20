@@ -142,6 +142,7 @@ const NoteState = (props) => {
       edescription: currentNote.description,
       etag: currentNote.tag,
     });
+    console.log(note);
   };
 
   return (

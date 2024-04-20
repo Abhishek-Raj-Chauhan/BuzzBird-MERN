@@ -3,7 +3,7 @@ import "./note.css";
 import noteContext from "../context/notes/noteContext";
 const NotePrev = (props) => {
   const context = useContext(noteContext);
-  const { note} = context;
+  const {note} = context;
   return (
     <div className="carder" id="ntitem3">
       <div
