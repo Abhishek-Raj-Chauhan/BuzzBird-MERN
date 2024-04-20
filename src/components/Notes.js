@@ -64,11 +64,11 @@ function Notes(props) {
   const handleEdit = () => {
     refClose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
+    prevNote(note);
     props.toggle("edit");
   };
   const onchange = (event) => {
     setnote({ ...note, [event.target.name]: event.target.value });
-    prevNote(note);
   };
 
   return (

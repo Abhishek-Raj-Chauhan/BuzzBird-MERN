@@ -72,6 +72,7 @@ const Mynotes = (props) => {
   const handleEdit = () => {
     refClose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
+    prevNote(note);
     props.toggle("edit");
   };
   const onchange = (event) => {
