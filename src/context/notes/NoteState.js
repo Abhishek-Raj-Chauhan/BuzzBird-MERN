@@ -129,20 +129,20 @@ const NoteState = (props) => {
   const [noteprev, setnoteprev] = useState(false);
   const [note, setnote] = useState({
     id: "",
-    etitle: "",
-    edescription: "",
-    etag: "",
+    title: "",
+    description: "",
+    tag: "",
   });
 
-  const prevNote = (currentNote) => {
+  const prevNote = async (currentNote) => {
     setnoteprev(true);
     setnote({
       id: currentNote._id,
-      etitle: currentNote.title,
-      edescription: currentNote.description,
-      etag: currentNote.tag,
+      title: currentNote.title,
+      description: currentNote.description,
+      tag: currentNote.tag,
     });
-    console.log(currentNote);
+    console.log(note);
   };
 
   return (
