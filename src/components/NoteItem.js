@@ -14,7 +14,7 @@ const NoteItem = (props) => {
   };
   useEffect(() => {
     prevNote(note);
-  }, [note]);
+  }, []);
   return (
     <div className="card rounded-0" id="ntitem">
       <div
