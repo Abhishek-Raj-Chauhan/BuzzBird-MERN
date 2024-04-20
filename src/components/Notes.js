@@ -63,7 +63,6 @@ function Notes(props) {
   const handleEdit = () => {
     refClose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
-    prevy();
     props.toggle("edit");
   };
   const onchange = (event) => {

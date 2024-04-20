@@ -10,13 +10,13 @@ const NotePrev = (props) => {
         className="container"
       >
         <h3 id="heady">
-          {note.title}
+          {note.etitle}
         </h3>
         <p id="prevy">
-          {note.description}
+          {note.edescription}
         </p>
         <p id="tagy">
-          {note.tag}
+          {note.etag}
         </p>
       </div>
       </div>
