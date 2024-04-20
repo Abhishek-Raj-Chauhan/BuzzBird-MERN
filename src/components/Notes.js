@@ -50,9 +50,6 @@ function Notes(props) {
     edescription: "",
     etag: "",
   });
-  useEffect(() => {
-    prevNote(note);
-  }, [note]);
   const updateNote = (currentNote) => {
     ref.current.click();
     setnote({
