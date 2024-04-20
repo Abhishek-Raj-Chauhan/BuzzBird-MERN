@@ -135,7 +135,6 @@ const NoteState = (props) => {
   });
 
   const prevNote = async (currentNote) => {
-    setnoteprev(true);
     setnote({
       id: currentNote._id,
       title: currentNote.title,
@@ -144,10 +143,13 @@ const NoteState = (props) => {
     });
     console.log(note);
   };
+  const prevy = async () => {
+    setnoteprev(true);
+  };
 
   return (
     <noteContext.Provider
-      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat, noteprev, setnoteprev, note, prevNote}}
+      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat, noteprev, setnoteprev, note, prevNote, prevy}}
     >
       {props.children}
     </noteContext.Provider>

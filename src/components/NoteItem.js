@@ -5,7 +5,7 @@ const NoteItem = (props) => {
   const { note, updateNote } = props;
   const [isFlipped, setIsFlipped] = useState(false);
   const context = useContext(noteContext);
-  const { deleteNote , prevNote} = context;
+  const { deleteNote , prevNote, prevy} = context;
   const handleMouseEnter = () => {
     setIsFlipped(true);
   };
@@ -17,7 +17,7 @@ const NoteItem = (props) => {
       <div
         className="card-body"
         onClick={() => {
-          prevNote(note);
+          prevNote(note),prevy;
         }}
       >
         <h5 className="card-title">
