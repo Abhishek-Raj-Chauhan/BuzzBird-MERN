@@ -13,7 +13,7 @@ const Mynotes = (props) => {
         : "transparent"
     }`;
   const context = useContext(noteContext);
-  const { notes, fetchAllNotes, editNote, prevNote } = context;
+  const { notes, fetchAllNotes, editNote } = context;
   let history = useHistory();
   const [loading, setLoading] = useState(false); // Add loading state
   const isRef1Clicked = localStorage.getItem("isRef1Clicked");
@@ -72,7 +72,6 @@ const Mynotes = (props) => {
   const handleEdit = () => {
     refClose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
-    prevNote(note);
     props.toggle("edit");
   };
   const onchange = (event) => {

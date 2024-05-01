@@ -26,9 +26,7 @@ const Home = (props) => {
         <Notes toggle={props.toggle} />
         {window.innerWidth > 600 && !noteprev ? (
           <AddNote toggle={props.toggle} alerter={props.alerter} />
-        ) : window.innerWidth > 600 && noteprev? (
-          <NotePrev/>
-        ):""}
+        ) :""}
       </div>
     </>
   );

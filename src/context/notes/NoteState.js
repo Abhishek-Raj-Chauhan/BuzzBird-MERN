@@ -125,30 +125,10 @@ const NoteState = (props) => {
     // setnotes(newNotes);
   };
   //Edit a note
-  
-  const [noteprev, setnoteprev] = useState(false);
-  const [note, setnote] = useState({
-    id: "",
-    etitle: "",
-    edescription: "",
-    etag: "",
-  });
-
-  const prevNote = (currentNote) => {
-    setnote({
-      id: currentNote._id,
-      etitle: currentNote.title,
-      edescription: currentNote.description,
-      etag: currentNote.tag,
-    });
-  };
-  const prevy = () => {
-    setnoteprev(true);
-  };
 
   return (
     <noteContext.Provider
-      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat, noteprev, setnoteprev, note, prevNote, prevy}}
+      value={{ notes, addNote, deleteNote, editNote, fetchAllNotes, fetchAllChats, chats, addChat}}
     >
       {props.children}
     </noteContext.Provider>
