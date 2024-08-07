@@ -44,7 +44,7 @@ const Signup = () => {
     setIsLoading(true); 
     const { name, email, password } = credentials;  
     const response = await fetch(
-      `https://cozynotes-mern.onrender.com/api/auth/createuser`,
+      `https://BuzzBird 🐦‍🔥-mern.onrender.com/api/auth/createuser`,
       {
         method: "POST",
         credentials: "same-origin",
@@ -81,7 +81,7 @@ const Signup = () => {
     }, 1100);
   }
 
-  const baseUrl = "https://cozynotes-mern.onrender.com";
+  const baseUrl = "https://BuzzBird 🐦‍🔥-mern.onrender.com";
 
   const sendEmail = async () => {
     let dataSend = {
@@ -518,7 +518,7 @@ const Signup = () => {
                     >
                       <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                         <h2 className="mb-4">
-                          Welcome to <strong>CozyNotes</strong>
+                          Welcome to <strong>BuzzBird 🐦‍🔥</strong>
                         </h2>
                         <p className="mb-0 my-2">
                           Sign up now and unlock a world of seamless note-taking
@@ -533,7 +533,7 @@ const Signup = () => {
                           effortlessly.
                         </p>
                         <p className="mb-0 my-2">
-                          At <strong>CozyNotes</strong>, we prioritize the
+                          At <strong>BuzzBird 🐦‍🔥</strong>, we prioritize the
                           security and privacy of your personal information.
                           Rest assured that your data is protected by
                           industry-leading security measures, ensuring that only
@@ -545,7 +545,7 @@ const Signup = () => {
                           blend of functionality, convenience, and security.
                           Sign up now and take the first step towards a more
                           organized and productive life with{" "}
-                          <strong>CozyNotes</strong>.
+                          <strong>BuzzBird 🐦‍🔥</strong>.
                         </p>
                       </div>
                     </div>

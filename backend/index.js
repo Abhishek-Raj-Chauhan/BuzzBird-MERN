@@ -27,5 +27,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, '0.0.0.0', () => {
-  console.log(`CozyNotes Backend listening at http://'0.0.0.0':${port}`);
+  console.log(`BuzzBird Backend listening at http://'0.0.0.0':${port}`);
 });

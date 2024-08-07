@@ -48,7 +48,7 @@ const Navbar = (props) => {
               to="/home"
               style={{ color: "#ffff", fontWeight: "500" }}
             >
-              CozyNotes
+              BuzzBird 🐦‍🔥
             </Link>
             {window.innerWidth <= 600 ? (
               <Link
