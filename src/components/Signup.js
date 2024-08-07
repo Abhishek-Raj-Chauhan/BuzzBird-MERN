@@ -44,7 +44,7 @@ const Signup = () => {
     setIsLoading(true); 
     const { name, email, password } = credentials;  
     const response = await fetch(
-      `https://BuzzBird 🐦‍🔥-mern.onrender.com/api/auth/createuser`,
+      `https://cozynotes-mern.onrender.com/api/auth/createuser`,
       {
         method: "POST",
         credentials: "same-origin",
@@ -81,7 +81,7 @@ const Signup = () => {
     }, 1100);
   }
 
-  const baseUrl = "https://BuzzBird 🐦‍🔥-mern.onrender.com";
+  const baseUrl = "https://cozynotes-mern.onrender.com";
 
   const sendEmail = async () => {
     let dataSend = {

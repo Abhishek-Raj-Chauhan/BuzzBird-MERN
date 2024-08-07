@@ -85,7 +85,7 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true); 
     const response = await fetch(
-      `https://BuzzBird 🐦‍🔥-mern.onrender.com/api/auth/login`,
+      `https://cozynotes-mern.onrender.com/api/auth/login`,
       {
         method: "POST",
         credentials: "same-origin",
@@ -123,7 +123,7 @@ const Login = () => {
         email: credentials.email,
       };
       setIsLoading(true); 
-      const res = await fetch(`https://BuzzBird 🐦‍🔥-mern.onrender.com/email/sendEmail`, {
+      const res = await fetch(`https://cozynotes-mern.onrender.com/email/sendEmail`, {
         method: "POST",
         body: JSON.stringify(dataSend),
         headers: {
@@ -155,7 +155,7 @@ const Login = () => {
       otp: otpe,
     };
     setIsLoading(true); 
-    const res = await fetch(`https://BuzzBird 🐦‍🔥-mern.onrender.com/email/verifyEmail`, {
+    const res = await fetch(`https://cozynotes-mern.onrender.com/email/verifyEmail`, {
       method: "POST",
       body: JSON.stringify(dataSend),
       headers: {
@@ -185,7 +185,7 @@ const Login = () => {
     const { email, password , cpassword} = credentials;  
     if(password===cpassword){
       const response = await fetch(
-        `https://BuzzBird 🐦‍🔥-mern.onrender.com/api/auth/updateUser`,
+        `https://cozynotes-mern.onrender.com/api/auth/updateUser`,
         {
           method: "PUT",
           credentials: "same-origin",
