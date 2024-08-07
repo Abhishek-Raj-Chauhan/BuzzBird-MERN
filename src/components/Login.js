@@ -420,7 +420,7 @@ const Login = () => {
                   className="icon d-flex justify-content-center align-items-center"
                   id="iyer2"
                 >
-                  <i id="iyer" class="fa-solid fa-info"></i>
+                  <i id="iyer" className="fa-solid fa-info"></i>
                 </div>
 
                 <h1 className="infohead">Important Note!</h1>
